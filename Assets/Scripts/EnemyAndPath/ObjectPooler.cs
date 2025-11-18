@@ -23,6 +23,7 @@ namespace EnemyAndPath
         private GameObject CreateNewObject()
         {
             GameObject obj = Instantiate(prefab, transform);
+            obj.tag = "Enemy";  // wtf
             obj.SetActive(false);
             _pool.Add(obj);
             return obj;
