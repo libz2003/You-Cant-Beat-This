@@ -227,6 +227,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1173349020436595083, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2553735249158607977, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_Name
       value: Cannon_Tower
@@ -257,19 +261,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70416754
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7100339
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -277,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.475006
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
