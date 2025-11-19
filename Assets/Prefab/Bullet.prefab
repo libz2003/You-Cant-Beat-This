@@ -9842,5 +9842,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4779cfcb718234286acddd539e5f33a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 700
+  speed: 200
   bulletImpactEffect: {fileID: 4917016559818965549, guid: d5e7fa5d980f447d1af0ac6d21244f39, type: 3}
