@@ -9711,6 +9711,7 @@ GameObject:
   - component: {fileID: 9175906403790080394}
   - component: {fileID: 7472142583215538754}
   - component: {fileID: 6503526316831856609}
+  - component: {fileID: -8569782412868572455}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -9798,7 +9799,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7917005678022134715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 807a988a1765edd439007be8fbee2c70, type: 3}
   m_Name: 
@@ -9829,3 +9830,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
   m_Center: {x: -0.00000002980233, y: 0, z: 0.000000014901165}
+--- !u!114 &-8569782412868572455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917005678022134715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4779cfcb718234286acddd539e5f33a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  speed: 700
+  bulletImpactEffect: {fileID: 4917016559818965549, guid: d5e7fa5d980f447d1af0ac6d21244f39, type: 3}
