@@ -51,7 +51,8 @@ public class Turret : MonoBehaviour
             // exploit: if too close then enemy is destroyed
             if (shortestDistance <= tooCloseRange)
             {
-                Destroy(nearestEnemy);
+                nearestEnemy.SetActive(false);
+                //Destroy(nearestEnemy);
             }
             else
             {
