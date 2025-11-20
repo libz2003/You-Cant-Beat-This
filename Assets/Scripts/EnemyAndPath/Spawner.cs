@@ -20,7 +20,6 @@ namespace EnemyAndPath
 
         void Update()
         {
-            Debug.Log(remainingSpawnNumber);
             if (remainingSpawnNumber > 0)
             {
                 _spawnTimer -= Time.deltaTime;
