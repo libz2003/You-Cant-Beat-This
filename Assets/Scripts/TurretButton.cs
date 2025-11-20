@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class TurretButton : MonoBehaviour
 {
     public GameObject turret;
+    public GameObject ghostTurret;
 
     public void PickTurret()
     {
@@ -12,12 +13,12 @@ public class TurretButton : MonoBehaviour
         if (BuildManager.instance.GetTurretToBuild() == turret)
         {
             // if yes, deselect it
-            BuildManager.instance.SetTurretToBuild(null);
+            BuildManager.instance.UnsetTurretToBuild();
         }
         else
         {
             // if not, select it
-            BuildManager.instance.SetTurretToBuild(turret);
+            BuildManager.instance.SetTurretAndGhost(turret, ghostTurret);
         }
     }
 }

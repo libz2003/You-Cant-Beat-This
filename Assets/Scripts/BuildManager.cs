@@ -7,6 +7,7 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
 
     private GameObject turretToBuild;
+    private GameObject ghostInstance;
     private Camera mainCamera;
 
     private Plane groundPlane;   // y = 0 plane
@@ -25,9 +26,18 @@ public class BuildManager : MonoBehaviour
         return turretToBuild;
     }
 
-    public void SetTurretToBuild(GameObject _turretToBuild)
+    public void SetTurretAndGhost(GameObject _turretToBuild, GameObject _ghostInstance)
     {
         turretToBuild = _turretToBuild;
+        ghostInstance = _ghostInstance;
+        ghostInstance.SetActive(true);
+    }
+
+    public void UnsetTurretToBuild()
+    {
+        turretToBuild = null;
+        ghostInstance.SetActive(false);
+        ghostInstance = null;
     }
 
     void Update()
@@ -35,6 +45,16 @@ public class BuildManager : MonoBehaviour
         if (turretToBuild == null)
             return;
 
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            ghostInstance.SetActive(false);
+            return;
+        }
+
+        ghostInstance.SetActive(true);
+        Vector3 point = computePlacementPoint();
+        point.y = 1f;
+        ghostInstance.transform.position = point;
 
         // Detect left-click
         if (!Mouse.current.leftButton.wasPressedThisFrame)
@@ -44,8 +64,8 @@ public class BuildManager : MonoBehaviour
 
         PlaceTurretOnGround();
     }
-
-    void PlaceTurretOnGround()
+    
+    Vector3 computePlacementPoint()
     {
         // Get mouse position from the new Input System
         Vector2 mousePos = Mouse.current.position.ReadValue();
@@ -58,10 +78,21 @@ public class BuildManager : MonoBehaviour
             Vector3 hitPoint = ray.GetPoint(distance);
             hitPoint.y = 0f;
 
-            Instantiate(turretToBuild, hitPoint, Quaternion.identity);
+            return hitPoint;
         }
+        
+        Debug.LogError("BuildManager.computePlacementPoint(): Unexpected things happened.");
+        return default; 
+    }
+    
+    void PlaceTurretOnGround()
+    {
+        Vector3 hitPoint = computePlacementPoint();
+        Instantiate(turretToBuild, hitPoint, Quaternion.identity);
 
-        // built turret, so deselect it
-        turretToBuild = null;
+        // built turret, so deselect it and hide ghost
+        // turretToBuild = null;
+        // ghostInstance.SetActive(false);
+        UnsetTurretToBuild();
     }
 }
