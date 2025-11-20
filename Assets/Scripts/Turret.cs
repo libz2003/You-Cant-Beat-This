@@ -11,6 +11,7 @@ public class Turret : MonoBehaviour
     public float range = 150.0f;
     public float fireRate = 1.0f;
     public float rotationSpeed = 10.0f;
+    public float tooCloseRange = 30.0f;
 
     [Header("Unity Setup Fields")]
 
@@ -47,7 +48,16 @@ public class Turret : MonoBehaviour
 
         if (nearestEnemy != null && shortestDistance <= range)
         {
-            target = nearestEnemy.transform;
+            // exploit: if too close then enemy is destroyed
+            if (shortestDistance <= tooCloseRange)
+            {
+                nearestEnemy.SetActive(false);
+                //Destroy(nearestEnemy);
+            }
+            else
+            {
+                target = nearestEnemy.transform;
+            }
         }
         else
         {
