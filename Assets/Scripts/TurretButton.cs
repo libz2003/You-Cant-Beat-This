@@ -13,7 +13,7 @@ public class TurretButton : MonoBehaviour
         if (BuildManager.instance.GetTurretToBuild() == turret)
         {
             // if yes, deselect it
-            BuildManager.instance.SetTurretAndGhost(null, null);
+            BuildManager.instance.UnsetTurretToBuild();
         }
         else
         {
