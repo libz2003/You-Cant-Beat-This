@@ -60,11 +60,9 @@ public class BuildManager : MonoBehaviour
         if (!Mouse.current.leftButton.wasPressedThisFrame)
             return;
 
-        Debug.Log("Building");
-
         PlaceTurretOnGround();
     }
-    
+
     Vector3 computePlacementPoint()
     {
         // Get mouse position from the new Input System
@@ -80,11 +78,11 @@ public class BuildManager : MonoBehaviour
 
             return hitPoint;
         }
-        
+
         Debug.LogError("BuildManager.computePlacementPoint(): Unexpected things happened.");
-        return default; 
+        return default;
     }
-    
+
     void PlaceTurretOnGround()
     {
         Vector3 hitPoint = computePlacementPoint();

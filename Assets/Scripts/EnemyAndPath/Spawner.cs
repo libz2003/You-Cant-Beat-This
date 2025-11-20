@@ -20,7 +20,7 @@ namespace EnemyAndPath
 
         void Update()
         {
-            if (remainingSpawnNumber != 0)
+            if (remainingSpawnNumber > 0)
             {
                 _spawnTimer -= Time.deltaTime;
                 if (_spawnTimer <= 0)
