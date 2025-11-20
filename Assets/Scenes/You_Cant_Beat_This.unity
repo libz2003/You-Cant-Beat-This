@@ -2457,8 +2457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0fc03a5c56b42ed92c310f4fa4c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Universe
-  LoseScene: 
-  WinScene: 
+  LoseScene: Lose
+  WinScene: Win
 --- !u!1 &1850869259
 GameObject:
   m_ObjectHideFlags: 0
