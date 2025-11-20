@@ -60,7 +60,16 @@ public class BuildManager : MonoBehaviour
         if (!Mouse.current.leftButton.wasPressedThisFrame)
             return;
 
-        PlaceTurretOnGround();
+        // check if we have enough money
+        if (PlayerStats.Money >= 300) // TODO: change later
+        {
+            PlayerStats.Money -= 300;
+            PlaceTurretOnGround();
+        }
+        else
+        {
+            turretToBuild = null;
+        }
     }
 
     Vector3 computePlacementPoint()
