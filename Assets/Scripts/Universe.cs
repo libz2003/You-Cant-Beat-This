@@ -1,8 +1,12 @@
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Universe : MonoBehaviour
 {
     public static Universe instance;
+    public string LoseScene;
+    public string WinScene;
 
     void Awake()
     {
@@ -18,6 +22,6 @@ public class Universe : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("Game Over");
+        SceneManager.LoadScene(LoseScene);
     }
 }
