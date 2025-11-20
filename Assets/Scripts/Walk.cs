@@ -4,8 +4,9 @@ public class PathWalker : MonoBehaviour
 {
     [Header("Path Settings")]
     public Transform[] waypoints;
-    public float moveSpeed = 25.0f;
-    public float turnSpeed = 5.0f;
+    public float moveSpeed=25.0f;
+    public bool hitting=false;
+    public float turnSpeed=5.0f;
     [Header("Animation")]
     public Animator animator;
     private int currentPointIndex = 0;
@@ -16,7 +17,11 @@ public class PathWalker : MonoBehaviour
     }
     void Update()
     {
-        if (waypoints.Length == 0)
+        if (hitting)
+        {
+            return;
+        }
+        if(waypoints.Length==0)
             return;
         Transform target = waypoints[currentPointIndex];
         transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
