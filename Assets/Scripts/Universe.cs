@@ -24,4 +24,9 @@ public class Universe : MonoBehaviour
     {
         SceneManager.LoadScene(LoseScene);
     }
+
+    public void Win()
+    {
+        SceneManager.LoadScene(WinScene);
+    }
 }
