@@ -145,7 +145,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1986102863626773776}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bcbf4bfd7da14e82a2597cdb0c17a79, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e8812cdbfe4d43baaff6ef9e3aaf00e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretButton
   turret: {fileID: 2553735249158607977, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
