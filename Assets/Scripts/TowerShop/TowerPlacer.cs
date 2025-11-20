@@ -3,24 +3,21 @@ using UnityEngine.EventSystems;
 
 public class ObjectPlacer : MonoBehaviour
 {
+    [Header("Required")]
     public GameObject prefabToPlace;
-    public GameObject ghostPrefab;
+    public GameObject ghostInstance;
 
+    [Header("Other settings")]
     public float fixedY = 6f;   // always place at this height
     public float maxDistance = 1000f;
 
-    private GameObject ghostInstance;
     private Camera mainCam;
 
     void Start()
     {
         mainCam = Camera.main;
 
-        if (ghostPrefab != null)
-        {
-            ghostInstance = Instantiate(ghostPrefab);
-            ghostInstance.SetActive(false);
-        }
+        ghostInstance.SetActive(false);
     }
 
     void Update()
