@@ -47,7 +47,6 @@ public class Turret : MonoBehaviour
 
         if (nearestEnemy != null && shortestDistance <= range)
         {
-            Debug.Log("Found target.");
             target = nearestEnemy.transform;
         }
         else
