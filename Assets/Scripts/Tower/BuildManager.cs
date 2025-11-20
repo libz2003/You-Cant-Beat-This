@@ -68,7 +68,7 @@ public class BuildManager : MonoBehaviour
         }
         else
         {
-            turretToBuild = null;
+            UnsetTurretToBuild();
         }
     }
 
