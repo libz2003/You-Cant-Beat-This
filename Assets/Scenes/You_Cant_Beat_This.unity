@@ -1787,6 +1787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CannonGhost
       objectReference: {fileID: 0}
+    - target: {fileID: 2553735249158607977, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 502.65982
