@@ -7,6 +7,7 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
 
     private GameObject turretToBuild;
+    private GameObject ghostInstance;
     private Camera mainCamera;
 
     private Plane groundPlane;   // y = 0 plane
@@ -25,9 +26,11 @@ public class BuildManager : MonoBehaviour
         return turretToBuild;
     }
 
-    public void SetTurretToBuild(GameObject _turretToBuild)
+    public void SetTurretAndGhost(GameObject _turretToBuild, GameObject _ghostInstance)
     {
         turretToBuild = _turretToBuild;
+        ghostInstance = _ghostInstance;
+        ghostInstance.SetActive(true);
     }
 
     void Update()
@@ -35,6 +38,13 @@ public class BuildManager : MonoBehaviour
         if (turretToBuild == null)
             return;
 
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+        {
+            ghostInstance.SetActive(false);
+            return;
+        }
+        
+        ghostInstance.transform.position = Input.mousePosition;
 
         // Detect left-click
         if (!Mouse.current.leftButton.wasPressedThisFrame)
@@ -61,7 +71,8 @@ public class BuildManager : MonoBehaviour
             Instantiate(turretToBuild, hitPoint, Quaternion.identity);
         }
 
-        // built turret, so deselect it
+        // built turret, so deselect it and hide ghost
         turretToBuild = null;
+        ghostInstance.SetActive(false);
     }
 }
