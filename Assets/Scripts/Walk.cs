@@ -10,40 +10,45 @@ public class PathWalker : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
     private int currentPointIndex = 0;
+    private Rigidbody rb;
     void Start()
     {
         if (animator != null)
             animator.SetBool("IsWalking", true);
+        rb = GetComponent<Rigidbody>();
     }
-    void Update()
+    void FixedUpdate()
     {
-        if (hitting)
-        {
-            return;
-        }
-        if(waypoints.Length==0)
-            return;
+        if (hitting || waypoints.Length == 0) return;
+
         Transform target = waypoints[currentPointIndex];
-        transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-        Vector3 direction = (target.position - transform.position).normalized;
-        if (direction != Vector3.zero)
+        Vector3 direction = (target.position - rb.position).normalized;
+        float distance = Vector3.Distance(rb.position, target.position);
+
+        // 1. Move via Velocity instead of Position
+        // We check distance to avoid jittering when very close
+        if (distance > 0.1f)
         {
+            // Apply velocity to move toward target
+            rb.linearVelocity = direction * moveSpeed; 
+            direction.y = 0;
+            
+            // Optional: Face the target
             Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
+            rb.rotation = Quaternion.Slerp(rb.rotation, lookRotation, Time.fixedDeltaTime * turnSpeed);
         }
-        if (Vector3.Distance(transform.position, target.position) < 0.1f)
+        else
         {
+            // Stop moving when close
+            rb.linearVelocity = Vector3.zero; 
+            
+            // Logic to switch to next waypoint
             currentPointIndex++;
             if (currentPointIndex >= waypoints.Length)
             {
                 Destroy(gameObject);
-                // lives deduct
                 PlayerStats.Lives--;
-                if (PlayerStats.Lives == 0)
-                {
-                    // game over
-                    Universe.instance.GameOver();
-                }
+                if (PlayerStats.Lives == 0) Universe.instance.GameOver();
             }
         }
     }
