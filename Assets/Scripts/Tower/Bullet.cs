@@ -2,42 +2,34 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private Transform target;
+    private Vector3 direction;
     public float speed = 700.0f;
     public GameObject bulletImpactEffect;
 
     public void Seek(Transform _target)
     {
-        target = _target;
+        direction = (_target.position - transform.position);
+        direction.y = 0;
+        direction = direction.normalized;
+        Destroy(gameObject, 10.0f);
     }
 
     void Update()
     {
-        if (target == null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
-
-        float distanceThisFrame = speed * Time.deltaTime;
-
-        if (dir.magnitude <= distanceThisFrame)
-        {
-            // hit
-            HitTarget();
-            return;
-        }
-
-        transform.Translate(dir.normalized * distanceThisFrame, Space.World);
+        transform.Translate(direction * speed * Time.deltaTime, Space.World);
     }
 
-    void HitTarget()
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            HitTarget(other.gameObject);
+        }
+    }
+    void HitTarget(GameObject target)
     {
         GameObject effectInstance = (GameObject)Instantiate(bulletImpactEffect, transform.position, transform.rotation);
+        target.GetComponent<EnemyAndPath.EnemyHealth>().TakeDamage(1);
         Destroy(effectInstance, 2.0f);
-        Destroy(gameObject);
     }
 }
