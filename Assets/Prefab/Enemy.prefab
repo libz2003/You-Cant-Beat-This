@@ -131,6 +131,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  moveSpeed: 50
+  moveSpeed: 2000
+  hitting: 0
   turnSpeed: 5
+  maxDistanceFromPath: 1
   animator: {fileID: 852389177358076773}

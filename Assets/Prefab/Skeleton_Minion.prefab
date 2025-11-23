@@ -466,7 +466,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  moveSpeed: 50
+  moveSpeed: 200
   hitting: 0
   turnSpeed: 5
   maxDistanceFromPath: 1
