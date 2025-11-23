@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GlitchSettings : MonoBehaviour
 {
     public GameObject settingsPanel;
@@ -14,7 +14,17 @@ public class GlitchSettings : MonoBehaviour
     public void ToggleSettings()
     {
         isSettingsOpen = !isSettingsOpen;
-        if(settingsPanel != null)
+        if (settingsPanel != null)
             settingsPanel.SetActive(isSettingsOpen);
+    }
+    public void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+    }
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }
