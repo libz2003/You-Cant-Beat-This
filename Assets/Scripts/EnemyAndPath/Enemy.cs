@@ -14,6 +14,8 @@ namespace EnemyAndPath
 
         private Spawner ownerSpawner;
 
+        public int Index { get; private set; }
+
         private void Awake()
         {
             Walker = GetComponent<PathWalker>();
@@ -46,10 +48,10 @@ namespace EnemyAndPath
         /// <summary>
         /// Called by the spawner when this enemy is spawned or taken from the pool.
         /// </summary>
-        public void Initialize(Transform[] waypoints, Spawner spawner)
+        public void Initialize(Transform[] waypoints, Spawner spawner, int index)
         {
             ownerSpawner = spawner;
-
+            Index = index;
             if (Walker != null && waypoints != null && waypoints.Length > 0)
             {
                 Walker.SetWaypoints(waypoints);

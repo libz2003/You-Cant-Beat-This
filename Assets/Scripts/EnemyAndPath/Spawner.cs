@@ -17,6 +17,8 @@ namespace EnemyAndPath
         private int finishedCount;
         private bool waveCompleted;
 
+        private int nextEnemyIndex = 0;
+
         private void Start()
         {
             pool = GetComponent<ObjectPooler>();
@@ -60,7 +62,7 @@ namespace EnemyAndPath
             if (enemy != null)
             {
                 // Initialize with waypoints and register this spawner.
-                enemy.Initialize(waypoints, this);
+                enemy.Initialize(waypoints, this, nextEnemyIndex++);
             }
 
             spawnedObject.SetActive(true);
