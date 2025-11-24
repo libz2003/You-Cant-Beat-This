@@ -1,5 +1,4 @@
-
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,35 +6,84 @@ namespace EnemyAndPath
 {
     public class EnemyHealth : MonoBehaviour
     {
-        public Slider healthSlider;
-        public int maxHealth = 10;
-        private int health = 10;
+        [Header("Health")]
+        [SerializeField] private int maxHealth = 10;
+        private int currentHealth;
 
-        // function for getting shot
+        [Header("Optional UI")]
+        [SerializeField] private Slider healthSlider;
+
+        public int MaxHealth => maxHealth;
+        public int CurrentHealth => currentHealth;
+
+        // Fired whenever health changes (including reset).
+        public event Action<EnemyHealth> OnHealthChanged;
+
+        // Fired once when health reaches zero.
+        public event Action<EnemyHealth> OnDied;
+
+        private bool isDead;
+
+        private void OnEnable()
+        {
+            // When re-used from a pool, reset state.
+            isDead = false;
+            ResetHealth();
+        }
+
+        /// <summary>
+        /// Apply damage to this enemy.
+        /// </summary>
         public void TakeDamage(int damage)
         {
-            health -= damage;
-            healthSlider.value = health / (float)maxHealth;
+            if (isDead) return;
+            if (damage <= 0) return;
 
-            if (health <= 0)
+            currentHealth -= damage;
+            if (currentHealth < 0)
             {
-                gameObject.SetActive(false);
+                currentHealth = 0;
+            }
+
+            UpdateSlider();
+            OnHealthChanged?.Invoke(this);
+
+            if (currentHealth == 0)
+            {
+                isDead = true;
+                OnDied?.Invoke(this);
             }
         }
 
-        // detect collision with Tower and take damage
+        /// <summary>
+        /// Reset health back to max.
+        /// </summary>
+        public void ResetHealth()
+        {
+            currentHealth = maxHealth;
+            isDead = false;
+            UpdateSlider();
+            OnHealthChanged?.Invoke(this);
+        }
+
+        /// <summary>
+        /// Optional: basic collision-based damage.
+        /// </summary>
         private void OnCollisionEnter(Collision collision)
         {
+            // Keep this for compatibility with your current towers.
             if (collision.gameObject.CompareTag("Tower"))
             {
                 TakeDamage(1);
             }
         }
 
-        public void ResetHealth()
+        private void UpdateSlider()
         {
-            health = maxHealth;
-            healthSlider.value = 1f;
+            if (healthSlider == null || maxHealth <= 0) return;
+
+            float normalized = (float)currentHealth / (float)maxHealth;
+            healthSlider.value = normalized;
         }
     }
 }

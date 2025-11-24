@@ -1,20 +1,18 @@
 using UnityEngine;
+using EnemyAndPath;  // to access the Enemy component
 
 public class Turret : MonoBehaviour
 {
-
     private Transform target;
     private float fireCountdown = 0.0f;
 
     [Header("Attributes")]
-
     public float range = 150.0f;
     public float fireRate = 1.0f;
     public float rotationSpeed = 10.0f;
     public float tooCloseRange = 30.0f;
 
     [Header("Unity Setup Fields")]
-
     public string enemyTag = "Enemy";
     public GameObject bulletPrefab;
     public Transform firePoint;
@@ -33,30 +31,51 @@ public class Turret : MonoBehaviour
     void UpdateTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
 
-        foreach (GameObject enemy in enemies)
+        GameObject selectedEnemy = null;
+        float selectedEnemyDistance = Mathf.Infinity;
+        int bestIndex = int.MaxValue;
+
+        foreach (GameObject enemyGO in enemies)
         {
-            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance)
+            // Make sure it has an Enemy component
+            Enemy enemy = enemyGO.GetComponent<Enemy>();
+            if (enemy == null)
             {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
+                continue;
+            }
+
+            float distanceToEnemy = Vector3.Distance(transform.position, enemyGO.transform.position);
+
+            // Only consider enemies within range
+            if (distanceToEnemy > range)
+            {
+                continue;
+            }
+
+            int enemyIndex = enemy.Index;
+
+            // Pick the enemy with the smallest index in range
+            if (enemyIndex < bestIndex)
+            {
+                bestIndex = enemyIndex;
+                selectedEnemy = enemyGO;
+                selectedEnemyDistance = distanceToEnemy;
             }
         }
 
-        if (nearestEnemy != null && shortestDistance <= range)
+        if (selectedEnemy != null)
         {
             // exploit: if too close then enemy is destroyed
-            if (shortestDistance <= tooCloseRange)
+            if (selectedEnemyDistance <= tooCloseRange)
             {
-                nearestEnemy.SetActive(false);
-                //Destroy(nearestEnemy);
+                selectedEnemy.SetActive(false);
+                // Destroy(selectedEnemy);
+                target = null;
             }
             else
             {
-                target = nearestEnemy.transform;
+                target = selectedEnemy.transform;
             }
         }
         else

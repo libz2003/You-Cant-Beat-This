@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class TurretButton : MonoBehaviour
 {
     public GameObject turret;
+    public int turretCost;
     public GameObject ghostTurret;
 
     public void PickTurret()
@@ -18,7 +19,7 @@ public class TurretButton : MonoBehaviour
         else
         {
             // if not, select it
-            BuildManager.instance.SetTurretAndGhost(turret, ghostTurret);
+            BuildManager.instance.SetTurretAndGhost(turret, ghostTurret, turretCost);
         }
     }
 }
