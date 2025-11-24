@@ -2859,6 +2859,10 @@ PrefabInstance:
       value: $200000
       objectReference: {fileID: 0}
     - target: {fileID: 2729950301609979484, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
+      propertyPath: turretCost
+      value: 200000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729950301609979484, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: ghostTurret
       value: 
       objectReference: {fileID: 945369374}
@@ -3244,6 +3248,10 @@ PrefabInstance:
     - target: {fileID: 577521310656564029, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: m_Name
       value: TowerButtonInShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729950301609979484, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
+      propertyPath: turretCost
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 2729950301609979484, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: ghostTurret
