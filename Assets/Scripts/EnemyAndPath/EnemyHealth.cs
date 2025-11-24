@@ -31,5 +31,11 @@ namespace EnemyAndPath
                 TakeDamage(1);
             }
         }
+
+        public void ResetHealth()
+        {
+            health = maxHealth;
+            healthSlider.value = 1f;
+        }
     }
 }

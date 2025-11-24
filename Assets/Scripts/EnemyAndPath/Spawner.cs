@@ -33,7 +33,7 @@ namespace EnemyAndPath
             {
                 // we check if all enemies are dead
                 GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-                if (enemies.Length == 0)
+                if (enemies.Length == 0 && PlayerStats.Lives > 0)
                 {
                     Universe.instance.Win();
                 }
@@ -43,9 +43,9 @@ namespace EnemyAndPath
         private void SpawnEnemy()
         {
             GameObject spawnedObject = pool.GetPooledObject();
-            spawnedObject.transform.position = waypoints[0].position;
-            spawnedObject.GetComponent<PathWalker>().waypoints = waypoints;
             spawnedObject.SetActive(true);
+            spawnedObject.GetComponent<PathWalker>().SetWaypoints(waypoints);
+            spawnedObject.GetComponent<EnemyHealth>().ResetHealth();
             remainingSpawnNumber--;
         }
     }

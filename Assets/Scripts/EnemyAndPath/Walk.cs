@@ -19,6 +19,18 @@ public class PathWalker : MonoBehaviour
             animator.SetBool("IsWalking", true);
         rb = GetComponent<Rigidbody>();
     }
+
+    /**
+     * Set the waypoints of this enemy, and reset walking stage.
+     */
+    public void SetWaypoints(Transform[] waypoints)
+    {
+        this.waypoints = waypoints;
+        currentPointIndex = 0;
+        // rb.position = waypoints[0].position;  // I don't know why this doesn't work
+        transform.position = waypoints[0].position;
+    }
+    
     void FixedUpdate()
     {
         if (hitting || waypoints.Length == 0) return;
@@ -55,7 +67,6 @@ public class PathWalker : MonoBehaviour
             currentPointIndex++;
             if (currentPointIndex >= waypoints.Length)
             {
-                // Destroy(gameObject);
                 gameObject.SetActive(false);
                 PlayerStats.Lives--;
                 if (PlayerStats.Lives == 0) Universe.instance.GameOver();

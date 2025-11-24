@@ -9,6 +9,7 @@ namespace EnemyAndPath
         [SerializeField] private GameObject prefab;
         [SerializeField] private int poolSize = 5;
         private List<GameObject> _pool;
+        public string enemyTag = "Enemy";
 
         void Start()
         {
@@ -23,7 +24,7 @@ namespace EnemyAndPath
         private GameObject CreateNewObject()
         {
             GameObject obj = Instantiate(prefab, transform);
-            obj.tag = "Enemy";  // wtf
+            obj.tag = enemyTag;
             obj.SetActive(false);
             _pool.Add(obj);
             return obj;
