@@ -55,7 +55,8 @@ public class PathWalker : MonoBehaviour
             currentPointIndex++;
             if (currentPointIndex >= waypoints.Length)
             {
-                Destroy(gameObject);
+                // Destroy(gameObject);
+                gameObject.SetActive(false);
                 PlayerStats.Lives--;
                 if (PlayerStats.Lives == 0) Universe.instance.GameOver();
             }
