@@ -6,35 +6,42 @@ namespace EnemyAndPath
     {
         public Transform[] waypoints;
         public int remainingSpawnNumber = 10;
-        public string enemyTag = "Enemy";
 
-        private float _spawnTimer;
         [SerializeField] private float spawnInterval = 1f;
 
         private ObjectPooler pool;
+        private float _spawnTimer;
+
+        // Wave tracking
+        private int spawnedCount;
+        private int finishedCount;
+        private bool waveCompleted;
 
         private void Start()
         {
-            pool = gameObject.GetComponent<ObjectPooler>();
+            pool = GetComponent<ObjectPooler>();
+            _spawnTimer = spawnInterval;
         }
 
-        void Update()
+        private void Update()
         {
+            // 1. Spawn enemies while we still have some to spawn.
             if (remainingSpawnNumber > 0)
             {
                 _spawnTimer -= Time.deltaTime;
-                if (_spawnTimer <= 0)
+                if (_spawnTimer <= 0f)
                 {
                     _spawnTimer = spawnInterval;
                     SpawnEnemy();
                 }
             }
-            else
+            // 2. When no more to spawn, wait until all spawned enemies are finished.
+            else if (!waveCompleted)
             {
-                // we check if all enemies are dead
-                GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-                if (enemies.Length == 0 && PlayerStats.Lives > 0)
+                // All spawned enemies have either died or reached the end.
+                if (spawnedCount > 0 && finishedCount >= spawnedCount && PlayerStats.Lives > 0)
                 {
+                    waveCompleted = true;
                     Universe.instance.Win();
                 }
             }
@@ -43,10 +50,28 @@ namespace EnemyAndPath
         private void SpawnEnemy()
         {
             GameObject spawnedObject = pool.GetPooledObject();
+            if (spawnedObject == null)
+            {
+                Debug.LogWarning("Spawner: ObjectPooler returned null pooled object.");
+                return;
+            }
+
+            Enemy enemy = spawnedObject.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                // Initialize with waypoints and register this spawner.
+                enemy.Initialize(waypoints, this);
+            }
+
             spawnedObject.SetActive(true);
-            spawnedObject.GetComponent<PathWalker>().SetWaypoints(waypoints);
-            spawnedObject.GetComponent<EnemyHealth>().ResetHealth();
             remainingSpawnNumber--;
+            spawnedCount++;
+        }
+
+        // Called by Enemy when it is finished (died or reached the end of the path).
+        public void NotifyEnemyFinished(Enemy enemy)
+        {
+            finishedCount++;
         }
     }
 }
