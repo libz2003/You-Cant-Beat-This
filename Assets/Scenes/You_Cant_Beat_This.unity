@@ -2551,7 +2551,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -43.23044, w: -62.366394}
+  m_margin: {x: 0, y: 0, z: -451.82294, w: -12.933136}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2709,6 +2709,7 @@ GameObject:
   - component: {fileID: 1614625331}
   - component: {fileID: 1614625330}
   - component: {fileID: 1614625329}
+  - component: {fileID: 1614625332}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
@@ -2829,6 +2830,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614625327}
   m_CullTransparentMesh: 1
+--- !u!114 &1614625332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614625327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2680d067c15814480ba55b8944d8ce1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SettingSell
 --- !u!1001 &1647832515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2840,6 +2853,10 @@ PrefabInstance:
     - target: {fileID: 577521310656564029, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: m_Name
       value: TowerButtonInShop (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 655382710118036702, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
+      propertyPath: m_text
+      value: $200000
       objectReference: {fileID: 0}
     - target: {fileID: 2729950301609979484, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: ghostTurret
@@ -2868,7 +2885,11 @@ PrefabInstance:
     - target: {fileID: 5169869124247766590, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 16db9d2fad0c6834e8245e8de230182f, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169869124247766590, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5563449461081867438, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2952,7 +2973,7 @@ PrefabInstance:
     - target: {fileID: 6884599298407663116, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 16db9d2fad0c6834e8245e8de230182f, type: 3}
+      objectReference: {fileID: 21300000, guid: a81aec3673a454ddca563f67eef1346a, type: 3}
     - target: {fileID: 7662508468076654399, guid: e3b771f2b57d8a749a0ef929d6675729, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
