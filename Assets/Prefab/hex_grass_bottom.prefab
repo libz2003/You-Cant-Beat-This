@@ -99,6 +99,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6239435213777484725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930198bcc9d56462380413ded9c1350d, type: 3}
+  m_Script: {fileID: 11500000, guid: e9bb1b4f245554ba4bdb8ac7f4f74f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HexSnapToGrid
