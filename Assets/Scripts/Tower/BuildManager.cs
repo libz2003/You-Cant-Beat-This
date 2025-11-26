@@ -7,6 +7,7 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
 
     private GameObject turretToBuild;
+    private int turretCost;
     private GameObject ghostInstance;
     private Camera mainCamera;
 
@@ -26,9 +27,10 @@ public class BuildManager : MonoBehaviour
         return turretToBuild;
     }
 
-    public void SetTurretAndGhost(GameObject _turretToBuild, GameObject _ghostInstance)
+    public void SetTurretAndGhost(GameObject _turretToBuild, GameObject _ghostInstance, int _turretCost)
     {
         turretToBuild = _turretToBuild;
+        turretCost = _turretCost;
         ghostInstance = _ghostInstance;
         ghostInstance.SetActive(true);
     }
@@ -36,6 +38,7 @@ public class BuildManager : MonoBehaviour
     public void UnsetTurretToBuild()
     {
         turretToBuild = null;
+        turretCost = 0;
         ghostInstance.SetActive(false);
         ghostInstance = null;
     }
@@ -61,9 +64,9 @@ public class BuildManager : MonoBehaviour
             return;
 
         // check if we have enough money
-        if (PlayerStats.Money >= 300) // TODO: change later
+        if (PlayerStats.Money >= turretCost) // TODO: change later
         {
-            PlayerStats.Money -= 300;
+            PlayerStats.Money -= turretCost;
             PlaceTurretOnGround();
         }
         else

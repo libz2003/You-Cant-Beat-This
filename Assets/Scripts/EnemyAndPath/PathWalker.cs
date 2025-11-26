@@ -13,6 +13,25 @@ public class PathWalker : MonoBehaviour
     public Animator animator;
     private int currentPointIndex = 0;
     private Rigidbody rb;
+
+    // 0 = just spawned, 1 = reached/at the last waypoint.
+    public float PathProgress
+    {
+        get
+        {
+            if (waypoints == null || waypoints.Length <= 1)
+            {
+                return 0f;
+            }
+
+            int maxIndex = Mathf.Max(1, waypoints.Length - 1);
+            // This uses waypoint index only (not exact position between waypoints),
+            // but it is enough to know who is further along the path.
+            return Mathf.Clamp01((float)currentPointIndex / maxIndex);
+        }
+    }
+
+    
     void Start()
     {
         if (animator != null)
@@ -67,10 +86,12 @@ public class PathWalker : MonoBehaviour
             currentPointIndex++;
             if (currentPointIndex >= waypoints.Length)
             {
-                gameObject.SetActive(false);
                 PlayerStats.Lives--;
                 if (PlayerStats.Lives == 0) Universe.instance.GameOver();
+                gameObject.SetActive(false);
             }
         }
     }
+
+
 }
