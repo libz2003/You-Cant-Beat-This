@@ -8,6 +8,7 @@ TagManager:
   - enemyBug
   - Enemy
   - Tower
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,57 @@
+using System;
+using UnityEngine;
+
+namespace EnemyAndPath
+{
+    public class BankHealth : MonoBehaviour
+    {
+        [Header("Health")]
+        [SerializeField] private int maxHealth = 10;
+        private int currentHealth;
+        [Header("Rewards")]
+        [SerializeField] private int rewardAmount =20000;
+        public int MaxHealth => maxHealth;
+        public int CurrentHealth => currentHealth;
+        public event Action<BankHealth> OnDied;
+        private bool isDead;
+        private void Start()
+        {
+            ResetHealth();
+        }
+
+        public void TakeDamage(int damage)
+        {
+            if (isDead)
+                return;
+            if (damage <= 0)
+                return;
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                isDead = true;
+                Die();
+            }
+        }
+        public void ResetHealth()
+        {
+            currentHealth=maxHealth;
+            isDead=false;
+        }
+        private void Die()
+        {
+            OnDied?.Invoke(this);
+            PlayerStats.Money += rewardAmount;
+            Destroy(gameObject);
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Bullet"))
+            {
+                TakeDamage(1);
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+}
