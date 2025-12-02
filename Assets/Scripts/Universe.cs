@@ -37,6 +37,21 @@ public class Universe : MonoBehaviour
 
     public void Restart()
     {
+        if (PersistentSettings.instance.canPlaceOnPath != PersistentSettings.instance.targetCanPlaceOnPath)
+        {
+            // TODO: audio
+            PersistentSettings.instance.canPlaceOnPath = PersistentSettings.instance.targetCanPlaceOnPath;
+        }
+        if (PersistentSettings.instance.optionObstacle != PersistentSettings.instance.targetOptionObstacle)
+        {
+            // TODO: audio
+            PersistentSettings.instance.optionObstacle = PersistentSettings.instance.targetOptionObstacle;
+        }
+        if (PersistentSettings.instance.sellOption != PersistentSettings.instance.targetSellOption)
+        {
+            // TODO: audio
+            PersistentSettings.instance.sellOption = PersistentSettings.instance.targetSellOption;
+        }
         Time.timeScale = 1f;
         SceneManager.LoadScene(MainScene);
     }
