@@ -3910,6 +3910,7 @@ GameObject:
   - component: {fileID: 1827487449}
   - component: {fileID: 1827487452}
   - component: {fileID: 1827487453}
+  - component: {fileID: 1827487454}
   m_Layer: 0
   m_Name: Universe
   m_TagString: Untagged
@@ -3991,6 +3992,19 @@ MonoBehaviour:
   startScreenCanvasGroup: {fileID: 673144596}
   startButton: {fileID: 1347039959}
   fadeDuration: 0.3
+--- !u!114 &1827487454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827487448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a22cb9978325ec41bd8a8fd0a6a8944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SellManager
+  mainCamera: {fileID: 864128651}
 --- !u!1 &1840325799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,6 +4040,10 @@ MonoBehaviour:
   targetOptionObstacle: 1
   sellOption: 1
   targetSellOption: 1
+  bankBreakable: 1
+  targetBankBreakable: 1
+  treeCuttable: 1
+  targetTreeCuttable: 1
 --- !u!4 &1840325801
 Transform:
   m_ObjectHideFlags: 0
