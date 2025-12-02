@@ -35,11 +35,20 @@ namespace EnemyAndPath
         }
         public void ResetHealth()
         {
-            currentHealth=maxHealth;
+            if (PersistentSettings.instance.bankBreakable)
+            {
+                currentHealth = maxHealth;
+            }
+            else // bank not breakable
+            {
+                currentHealth = 1000000;
+            }
             isDead=false;
         }
         private void Die()
         {
+            // TODO: audio
+            PersistentSettings.instance.targetBankBreakable = false;
             OnDied?.Invoke(this);
             PlayerStats.Money += rewardAmount;
             Destroy(gameObject);

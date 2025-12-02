@@ -10,7 +10,7 @@ public class PersistentSettings : MonoBehaviour
     public bool sellOption = true;
     public bool targetSellOption = true; // SettingSell
     public bool bankBreakable = true;
-    public bool targetBankBreakable = true;
+    public bool targetBankBreakable = true; // BankHit
     public bool treeCuttable = true;
     public bool targetTreeCuttable = true;
 
