@@ -66,17 +66,19 @@ public class Turret : MonoBehaviour
 
         if (selectedEnemy != null)
         {
-            // exploit: if too close then enemy is destroyed
-            if (selectedEnemyDistance <= tooCloseRange)
-            {
-                selectedEnemy.SetActive(false);
-                // Destroy(selectedEnemy);
-                target = null;
-            }
-            else
-            {
-                target = selectedEnemy.transform;
-            }
+            // // exploit: if too close then enemy is destroyed
+            // if (selectedEnemyDistance <= tooCloseRange)
+            // {
+            //     selectedEnemy.SetActive(false);
+            //     // Destroy(selectedEnemy);
+            //     target = null;
+            // }
+            // else
+            // {
+            //     target = selectedEnemy.transform;
+            // }
+
+            target = selectedEnemy.transform;
         }
         else
         {
@@ -103,6 +105,14 @@ public class Turret : MonoBehaviour
         }
 
         fireCountdown -= Time.deltaTime;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Tower collided with an enemy!");
+        }
     }
 
     void Shoot()

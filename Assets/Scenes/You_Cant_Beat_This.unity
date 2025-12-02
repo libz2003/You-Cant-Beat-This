@@ -2247,7 +2247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ce75eff023a466d9629252461bea99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAndPath.Spawner
-  remainingSpawnNumber: 10
+  remainingSpawnNumber: 15
   spawnInterval: 2
 --- !u!114 &1322745783
 MonoBehaviour:
