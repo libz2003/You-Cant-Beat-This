@@ -22,16 +22,23 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Tree"))
         {
-            HitTarget(other.gameObject);
-            Debug.Log("Hit");
+            other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            other.gameObject.GetComponent<Rigidbody>().AddForce(direction * 200.0f);
         }
-    }
-    void HitTarget(GameObject target)
+    }   
+
+    private void OnCollisionEnter(Collision other)
     {
-        GameObject effectInstance = (GameObject)Instantiate(bulletImpactEffect, transform.position, transform.rotation);
-        target.GetComponent<EnemyAndPath.EnemyHealth>().TakeDamage(damage);
-        Destroy(effectInstance, 2.0f);
+        HitTarget();
+    }
+    void HitTarget()
+    {
+        if (bulletImpactEffect != null)
+        {
+            GameObject effectInstance = (GameObject)Instantiate(bulletImpactEffect, transform.position, transform.rotation);
+            Destroy(effectInstance, 2.0f);
+        }
     }
 }

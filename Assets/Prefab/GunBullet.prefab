@@ -9707,9 +9707,9 @@ GameObject:
   - component: {fileID: 7371488160684491067}
   - component: {fileID: 4073695657549948772}
   - component: {fileID: 9175906403790080394}
-  - component: {fileID: 6503526316831856609}
   - component: {fileID: -8569782412868572455}
   - component: {fileID: 8598854041554178731}
+  - component: {fileID: 7625759346404196080}
   m_Layer: 0
   m_Name: GunBullet
   m_TagString: GunBullet
@@ -9790,27 +9790,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6503526316831856609
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7917005678022134715}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.70014036, y: 0.721472, z: 0.7015678}
-  m_Center: {x: 0.018413657, y: 0.01652382, z: -0.023222426}
 --- !u!114 &-8569782412868572455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9853,3 +9832,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!135 &7625759346404196080
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917005678022134715}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1525
+  m_Center: {x: -0.000000029802322, y: 0, z: 0.000000014901161}
