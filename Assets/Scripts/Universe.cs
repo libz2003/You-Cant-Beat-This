@@ -7,6 +7,8 @@ public class Universe : MonoBehaviour
     public static Universe instance;
     public string LoseScene;
     public string WinScene;
+    public string MainScene;
+    public string TestAgainScene;
 
     void Awake()
     {
@@ -27,13 +29,12 @@ public class Universe : MonoBehaviour
 
     public void Win()
     {
-        SceneManager.LoadScene(WinScene);
+        SceneManager.LoadScene(TestAgainScene);
     }
 
     public void Restart()
     {
         Time.timeScale = 1f;
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        SceneManager.LoadScene(MainScene);
     }
 }
