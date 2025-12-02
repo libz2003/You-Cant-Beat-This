@@ -32,7 +32,15 @@ public class Universe : MonoBehaviour
 
     public void Win()
     {
-        SceneManager.LoadScene(TestAgainScene);
+        if (PersistentSettings.instance.numberBugRemaining() <= 1)
+        {
+            // win
+            SceneManager.LoadScene(WinScene);
+        }
+        else
+        {
+            SceneManager.LoadScene(TestAgainScene);
+        }
     }
 
     public void Restart()

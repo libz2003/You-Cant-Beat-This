@@ -12,7 +12,7 @@ public class PersistentSettings : MonoBehaviour
     public bool bankBreakable = true;
     public bool targetBankBreakable = true; // BankHit
     public bool treeCuttable = true;
-    public bool targetTreeCuttable = true;
+    public bool targetTreeCuttable = true; // Tree/TreeCollisionManager AND Tree/TreeTipCollisionManager
 
     void Awake()
     {
@@ -30,15 +30,15 @@ public class PersistentSettings : MonoBehaviour
     public int numberBugRemaining()
     {   
         int remaining = 5;
-        if (!canPlaceOnPath)
+        if (!targetCanPlaceOnPath)
             remaining -= 1;
-        if (!optionObstacle)
+        if (!targetOptionObstacle)
             remaining -= 1;
-        if (!sellOption)
+        if (!targetSellOption)
             remaining -= 1;
-        if (!bankBreakable)
+        if (!targetBankBreakable)
             remaining -= 1;
-        if (!treeCuttable)
+        if (!targetTreeCuttable)
             remaining -= 1;
 
         return remaining;
