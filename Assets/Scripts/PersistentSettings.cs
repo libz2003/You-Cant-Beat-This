@@ -9,6 +9,10 @@ public class PersistentSettings : MonoBehaviour
     public bool targetOptionObstacle = true;
     public bool sellOption = true;
     public bool targetSellOption = true;
+    public bool bankBreakable = true;
+    public bool targetBankBreakable = true;
+    public bool treeCuttable = true;
+    public bool targetTreeCuttable = true;
 
     void Awake()
     {
