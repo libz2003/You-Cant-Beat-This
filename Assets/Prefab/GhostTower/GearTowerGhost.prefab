@@ -112,7 +112,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.79040253, g: 0.89433956, b: 0.21176471, a: 0.15686275}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,8 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower.GhostCircleColorChanger
   circle: {fileID: 1136401670061020394}
-  yesColor: {r: 0.06666667, g: 0.007843138, b: 0.40392157, a: 1}
-  noColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!1001 &3448704395415790632
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,8 +8,8 @@ namespace Tower
     
         private Renderer rend;
 
-        private Color yesColor = new Color32(0x11, 0x02, 0x67, 0xFF);
-        private Color noColor = new Color32(0xff, 0xff, 0xff, 0xff);
+        private Color yesColor = new Color32(0x11, 0x02, 0x67, 0xC8);
+        private Color noColor = new Color32(0xFF, 0x28, 0x28, 0xC8);
 
         void Awake()
         {
