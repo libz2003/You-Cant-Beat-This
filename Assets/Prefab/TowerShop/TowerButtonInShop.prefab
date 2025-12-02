@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretButton
   turret: {fileID: 2553735249158607977, guid: 4d2fe9905e26143acb9e901dfbd999b6, type: 3}
+  turretCost: 0
   ghostTurret: {fileID: 0}
 --- !u!1 &6363870995257786993
 GameObject:

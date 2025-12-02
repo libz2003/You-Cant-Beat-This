@@ -6,9 +6,13 @@ public class PersistentSettings : MonoBehaviour
     public bool canPlaceOnPath = true;
     public bool targetCanPlaceOnPath = true; // Turret
     public bool optionObstacle = true;
-    public bool targetOptionObstacle = true;
+    public bool targetOptionObstacle = true; // UIs/OptionColliderController
     public bool sellOption = true;
     public bool targetSellOption = true;
+    public bool bankBreakable = true;
+    public bool targetBankBreakable = true;
+    public bool treeCuttable = true;
+    public bool targetTreeCuttable = true;
 
     void Awake()
     {
