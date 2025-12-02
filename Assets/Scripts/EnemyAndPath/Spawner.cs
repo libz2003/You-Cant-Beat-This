@@ -5,7 +5,7 @@ namespace EnemyAndPath
 {
     public class Spawner : MonoBehaviour
     {
-        // public Transform[] waypoints;
+        // public Transform[] waypoints; // now use GridWaypointContainer.Waypoints 
         public int remainingSpawnNumber = 15;
 
         [SerializeField] private float spawnInterval = 1f;
