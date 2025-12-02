@@ -4119,8 +4119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Universe
   LoseScene: Lose
   WinScene: Win
-  MainScene: 
-  TestAgainScene: 
+  MainScene: You_Cant_Beat_This
+  TestAgainScene: TestAgain
 --- !u!1 &1840325799
 GameObject:
   m_ObjectHideFlags: 0
@@ -4150,7 +4150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412bd08aea24d4703a1b27a84d8a04da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersistentSettings
-  towerObstacle: 1
+  canPlaceOnPath: 1
   optionObstacle: 1
   sellOption: 1
 --- !u!4 &1840325801
