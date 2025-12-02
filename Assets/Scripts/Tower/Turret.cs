@@ -111,7 +111,8 @@ public class Turret : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Tower collided with an enemy!");
+            // TODO: audio
+            PersistentSettings.instance.targetCanPlaceOnPath = False;
         }
     }
 
