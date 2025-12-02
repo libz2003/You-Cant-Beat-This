@@ -20,13 +20,11 @@ namespace Tower
 
         public void SetYesColor()
         {
-            Debug.Log("yes");
             rend.material.color = yesColor;
         }
 
         public void SetNoColor()
         {
-            Debug.Log("no");
             rend.material.color = noColor;
         }
     }
