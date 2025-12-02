@@ -20,9 +20,10 @@ public class TreeCollisionManager : MonoBehaviour
             // TODO: audio
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && PersistentSettings.instance.targetTreeCuttable)
         {
             PersistentSettings.instance.targetTreeCuttable = false;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.treeReaction);
         }
     }
 }

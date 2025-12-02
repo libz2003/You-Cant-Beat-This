@@ -17,7 +17,6 @@ public class TreeTipCollisionManager : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             PersistentSettings.instance.targetTreeCuttable = false;
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.treeReaction);
         }
     }
 }

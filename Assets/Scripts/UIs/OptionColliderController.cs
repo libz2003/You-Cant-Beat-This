@@ -12,7 +12,7 @@ public class OptionColliderController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && PersistentSettings.instance.targetOptionObstacle)
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.pauseReaction);
             PersistentSettings.instance.targetOptionObstacle = false;

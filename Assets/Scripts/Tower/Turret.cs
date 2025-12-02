@@ -109,7 +109,7 @@ public class Turret : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && PersistentSettings.instance.targetCanPlaceOnPath)
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.towerReaction);
             PersistentSettings.instance.targetCanPlaceOnPath = false;
