@@ -111,7 +111,7 @@ public class Turret : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // TODO: audio
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.towerReaction);
             PersistentSettings.instance.targetCanPlaceOnPath = false;
         }
     }

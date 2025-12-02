@@ -14,7 +14,7 @@ public class OptionColliderController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // TODO: audio
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.pauseReaction);
             PersistentSettings.instance.targetOptionObstacle = false;
         }
     }

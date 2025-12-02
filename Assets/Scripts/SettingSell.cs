@@ -10,9 +10,9 @@ public class SettingSell : MonoBehaviour, IPointerClickHandler
             case PointerEventData.InputButton.Right:
                 if (PersistentSettings.instance.sellOption)
                 {   
-                    // TODO: audio
                     SellOption();
                     PersistentSettings.instance.targetSellOption = false;
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.settingsReaction);
                 }
                 break;
         }
