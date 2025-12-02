@@ -74,15 +74,27 @@ namespace EnemyAndPath
             // Keep this for compatibility with your current towers.
             if (collision.gameObject.CompareTag("GunBullet"))
             {
-                TakeDamage(1);
+                TakeDamage(2);
             }
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                TakeDamage(20);
+                TakeDamage(5);
             }
             if (collision.gameObject.CompareTag("GearBullet"))
             {
                 TakeDamage(100);
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("SmallExplode"))
+            {
+                TakeDamage(4);
+            }
+            if (other.gameObject.CompareTag("BigExplode"))
+            {
+                TakeDamage(10);
             }
         }
 

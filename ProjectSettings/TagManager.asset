@@ -12,6 +12,9 @@ TagManager:
   - GunBullet
   - GearBullet
   - Tree
+  - FxTemporaire
+  - SmallExplode
+  - BigExplode
   layers:
   - Default
   - TransparentFX

@@ -9802,9 +9802,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GearBullet
   speed: 700
-  lifeTime: 3
   damage: 100
-  bulletImpactEffect: {fileID: 4917016559818965549, guid: d5e7fa5d980f447d1af0ac6d21244f39, type: 3}
+  splatterRange: 50
+  bulletImpactEffect: {fileID: 7523247084045052601, guid: 7ec887b1ef8d94ec8a3ea20ca4ebed49, type: 3}
 --- !u!135 &6522193323704159688
 SphereCollider:
   m_ObjectHideFlags: 0

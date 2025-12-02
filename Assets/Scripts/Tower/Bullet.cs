@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
         direction = (_target.position - transform.position);
         direction.y = 0;
         direction = direction.normalized;
-        Destroy(gameObject, 10.0f);
+        Destroy(gameObject, 1.0f);
     }
 
     void Update()
@@ -22,6 +22,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Tower"))
+        {
+            return;
+        }
         if (other.gameObject.CompareTag("Tree"))
         {
             other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -31,6 +35,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.CompareTag("Tower"))
+        {
+            return;
+        }
         HitTarget();
     }
     void HitTarget()
@@ -40,5 +48,6 @@ public class Bullet : MonoBehaviour
             GameObject effectInstance = (GameObject)Instantiate(bulletImpactEffect, transform.position, transform.rotation);
             Destroy(effectInstance, 2.0f);
         }
+        Destroy(gameObject);
     }
 }

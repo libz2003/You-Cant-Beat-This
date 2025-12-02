@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2444080546648776018}
   - component: {fileID: 1260215720596872878}
   - component: {fileID: 2876219474274037821}
+  - component: {fileID: 1717016100647531385}
   m_Layer: 0
   m_Name: TreeTip
   m_TagString: Untagged
@@ -66,6 +67,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80739bd6ea0a4b698d4670f3e862504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TreeTip
+--- !u!114 &1717016100647531385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597314270773699359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a152e16a19742ecb9fdba273e58a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeTipCollisionManager
 --- !u!1 &6426580935921233891
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,6 +91,7 @@ GameObject:
   - component: {fileID: 6365171350919299968}
   - component: {fileID: 8766852351151349562}
   - component: {fileID: 5260345517220650755}
+  - component: {fileID: 8995932937128591814}
   m_Layer: 0
   m_Name: MovableTree
   m_TagString: Tree
@@ -254,6 +268,18 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8995932937128591814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6426580935921233891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e28d77a37a44331a5bfc0ea9a79165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TreeCollisionManager
 --- !u!1001 &311655720659593328
 PrefabInstance:
   m_ObjectHideFlags: 0

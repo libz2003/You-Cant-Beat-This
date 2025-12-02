@@ -9804,7 +9804,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   speed: 1500
   damage: 5
-  bulletImpactEffect: {fileID: 4917016559818965549, guid: d5e7fa5d980f447d1af0ac6d21244f39, type: 3}
+  splatterRange: 50
+  bulletImpactEffect: {fileID: 9046094744424484600, guid: 1265a65917a6f4333a55d54e7329a2d5, type: 3}
 --- !u!54 &8598854041554178731
 Rigidbody:
   m_ObjectHideFlags: 0

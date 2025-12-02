@@ -7,7 +7,6 @@ public class GearBullet : MonoBehaviour
 
     [Header("Stats")]
     public float speed = 700.0f;
-    public float lifeTime = 3.0f;
     public int damage = 5;  // super powerful compared to normal bullet
 
     [Header("Effects")]
@@ -17,7 +16,7 @@ public class GearBullet : MonoBehaviour
     public void Init(Vector3 dir)
     {
         direction = dir.normalized;
-        Destroy(gameObject, lifeTime);
+        Destroy(gameObject, 1.0f);
     }
 
     void Update()
@@ -27,6 +26,10 @@ public class GearBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Tower"))
+        {
+            return;
+        }
         HitTarget();
     }
 
@@ -38,5 +41,6 @@ public class GearBullet : MonoBehaviour
                 Instantiate(bulletImpactEffect, transform.position, transform.rotation);
             Destroy(effectInstance, 2.0f);
         }
+        Destroy(gameObject);
     }
 }
