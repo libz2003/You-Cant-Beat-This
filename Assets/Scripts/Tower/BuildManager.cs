@@ -84,7 +84,7 @@ public class BuildManager : MonoBehaviour
         {
             if (PlaceTurretOnGround())
             {
-                PlayerStats.Money -= turretCost;
+                // PlayerStats.Money -= turretCost;
             }
         }
         else
@@ -172,6 +172,7 @@ public class BuildManager : MonoBehaviour
         if (canPlaceOnPath || !pointIsOnPath(hitPoint, GridWaypointContainer.Waypoints))
         {
             Instantiate(turretToBuild, hitPoint, Quaternion.identity);
+            PlayerStats.Money -= turretCost;
             UnsetTurretToBuild();
             return true;
         }
