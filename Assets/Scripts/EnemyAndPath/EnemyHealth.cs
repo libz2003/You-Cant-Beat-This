@@ -7,7 +7,7 @@ namespace EnemyAndPath
     public class EnemyHealth : MonoBehaviour
     {
         [Header("Health")]
-        [SerializeField] private int maxHealth = 10;
+        [SerializeField] private int maxHealth = 100;
         private int currentHealth;
 
         [Header("Optional UI")]
