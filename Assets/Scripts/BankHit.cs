@@ -9,7 +9,7 @@ namespace EnemyAndPath
         [SerializeField] private int maxHealth = 10;
         private int currentHealth;
         [Header("Rewards")]
-        [SerializeField] private int rewardAmount =20000;
+        [SerializeField] private int rewardAmount = 20000;
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;
         public event Action<BankHealth> OnDied;
@@ -35,11 +35,20 @@ namespace EnemyAndPath
         }
         public void ResetHealth()
         {
-            currentHealth=maxHealth;
+            if (PersistentSettings.instance.bankBreakable)
+            {
+                currentHealth = maxHealth;
+            }
+            else // bank not breakable
+            {
+                currentHealth = 1000000;
+            }
             isDead=false;
         }
         private void Die()
         {
+            // TODO: audio
+            PersistentSettings.instance.targetBankBreakable = false;
             OnDied?.Invoke(this);
             PlayerStats.Money += rewardAmount;
             Destroy(gameObject);
@@ -49,7 +58,12 @@ namespace EnemyAndPath
         {
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                TakeDamage(1);
+                TakeDamage(10);
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.CompareTag("GunBullet"))
+            {
+                TakeDamage(4);
                 Destroy(collision.gameObject);
             }
         }
