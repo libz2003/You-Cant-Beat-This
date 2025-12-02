@@ -8,7 +8,12 @@ public class SettingSell : MonoBehaviour, IPointerClickHandler
         switch (eventData.button)
         {
             case PointerEventData.InputButton.Right:
-                SellOption();
+                if (PersistentSettings.instance.sellOption)
+                {   
+                    // TODO: audio
+                    SellOption();
+                    PersistentSettings.instance.targetSellOption = false;
+                }
                 break;
         }
     }
