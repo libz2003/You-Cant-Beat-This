@@ -16,7 +16,7 @@ public class BuildManager : MonoBehaviour
 
     private Plane groundPlane;   // y = 0 plane
 
-    public bool canPlaceOnPath;  // unity
+    // public bool canPlaceOnPath;  // use PersistentSettings.canPlaceOnPath
     public float pathWidth;  // unity
 
     void Awake()
