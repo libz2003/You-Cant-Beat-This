@@ -4099,7 +4099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7e233c95820466daf02b3624ee02a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1607111370}
   randomSounds:
   - {fileID: 8300000, guid: af67cbd3d430d4708bfd5ea45ce06811, type: 3}
   - {fileID: 8300000, guid: 498aa36a5025b49308aca95274eeb99a, type: 3}
