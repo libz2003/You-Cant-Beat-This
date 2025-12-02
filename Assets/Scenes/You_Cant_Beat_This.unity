@@ -3895,7 +3895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2a76d5049f946b184670ee5b2e38d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  startLives: 10
+  startLives: 5
   startMoney: 500
 --- !u!4 &1827487451
 Transform:
