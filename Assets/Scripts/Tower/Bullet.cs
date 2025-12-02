@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             HitTarget(other.gameObject);
+            Debug.Log("Hit");
         }
     }
     void HitTarget(GameObject target)

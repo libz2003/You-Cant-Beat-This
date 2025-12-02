@@ -72,9 +72,13 @@ namespace EnemyAndPath
         private void OnCollisionEnter(Collision collision)
         {
             // Keep this for compatibility with your current towers.
-            if (collision.gameObject.CompareTag("Bullet"))
+            if (collision.gameObject.CompareTag("GunBullet"))
             {
                 TakeDamage(1);
+            }
+            if (collision.gameObject.CompareTag("Bullet"))
+            {
+                TakeDamage(10);
             }
         }
 

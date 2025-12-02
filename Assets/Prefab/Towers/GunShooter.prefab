@@ -53,7 +53,7 @@ MonoBehaviour:
   rotationSpeed: 10
   tooCloseRange: 30
   enemyTag: Enemy
-  bulletPrefab: {fileID: 7917005678022134715, guid: 70e7d6d7544e44c91b58c1850d82b948, type: 3}
+  bulletPrefab: {fileID: 7917005678022134715, guid: f139c3dbc114a403d99332beb7f5dbe9, type: 3}
   firePoint: {fileID: 4164151065431709382}
 --- !u!136 &5780757100709759419
 CapsuleCollider:
