@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static int Lives;
-    public int startLives = 10;
+    public int startLives = 5;
     public static int Money;
     public int startMoney = 500;
 

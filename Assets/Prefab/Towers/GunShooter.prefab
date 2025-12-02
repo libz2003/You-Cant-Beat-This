@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44fedbd954e3042479a520862a31c2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
-  range: 300
+  range: 250
   fireRate: 5
   rotationSpeed: 10
   tooCloseRange: 30
