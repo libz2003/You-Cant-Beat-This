@@ -51,7 +51,8 @@ namespace EnemyAndPath
             PersistentSettings.instance.targetBankBreakable = false;
             OnDied?.Invoke(this);
             PlayerStats.Money += rewardAmount;
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            transform.Find("Bank").GetComponent<Renderer>().enabled = false;
         }
 
         private void OnCollisionEnter(Collision collision)
