@@ -66,7 +66,7 @@ public class BuildManager : MonoBehaviour
         Vector3 point = computePlacementPoint();
         point.y = 0f;
         ghostInstance.transform.position = point;
-        if (canPlaceOnPath || !pointIsOnPath(point, GridWaypointContainer.Waypoints))
+        if (PersistentSettings.instance.canPlaceOnPath || !pointIsOnPath(point, GridWaypointContainer.Waypoints))
         {
             ghostInstanceColorChanger.SetYesColor();
         }
@@ -169,7 +169,7 @@ public class BuildManager : MonoBehaviour
     {
         Vector3 hitPoint = computePlacementPoint();
         
-        if (canPlaceOnPath || !pointIsOnPath(hitPoint, GridWaypointContainer.Waypoints))
+        if (PersistentSettings.instance.canPlaceOnPath || !pointIsOnPath(hitPoint, GridWaypointContainer.Waypoints))
         {
             Instantiate(turretToBuild, hitPoint, Quaternion.identity);
             PlayerStats.Money -= turretCost;

@@ -3,7 +3,7 @@ using UnityEngine;
 public class PersistentSettings : MonoBehaviour
 {
     public static PersistentSettings instance;
-    public bool towerObstacle = true;
+    public bool canPlaceOnPath = true;
     public bool optionObstacle = true;
     public bool sellOption = true;
 
