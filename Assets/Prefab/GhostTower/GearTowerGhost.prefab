@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4825989530000476992}
+  - component: {fileID: 7133472660389589791}
   m_Layer: 0
   m_Name: GearTowerGhost
   m_TagString: Untagged
@@ -155,6 +156,21 @@ Transform:
   - {fileID: 3654157689803327005}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7133472660389589791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298009089296934548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628c2b17f890d4feeb2d9475c279282e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tower.GhostCircleColorChanger
+  circle: {fileID: 1136401670061020394}
+  yesColor: {r: 0.06666667, g: 0.007843138, b: 0.40392157, a: 1}
+  noColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!1001 &3448704395415790632
 PrefabInstance:
   m_ObjectHideFlags: 0

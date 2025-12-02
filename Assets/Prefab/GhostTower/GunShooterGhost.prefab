@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1243298957525724182}
+  - component: {fileID: 6119435648740447557}
   m_Layer: 0
   m_Name: GunShooterGhost
   m_TagString: Untagged
@@ -33,6 +34,21 @@ Transform:
   - {fileID: 6619038646838466120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6119435648740447557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512543648113564095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 628c2b17f890d4feeb2d9475c279282e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tower.GhostCircleColorChanger
+  circle: {fileID: 8042561886187009985}
+  yesColor: {r: 0.06666667, g: 0.007843138, b: 0.40392157, a: 1}
+  noColor: {r: 1, g: 0, b: 1, a: 1}
 --- !u!1 &8042561886187009985
 GameObject:
   m_ObjectHideFlags: 0
