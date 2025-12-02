@@ -1,10 +1,11 @@
+using Map;
 using UnityEngine;
 
 namespace EnemyAndPath
 {
     public class Spawner : MonoBehaviour
     {
-        public Transform[] waypoints;
+        // public Transform[] waypoints;
         public int remainingSpawnNumber = 15;
 
         [SerializeField] private float spawnInterval = 1f;
@@ -62,7 +63,8 @@ namespace EnemyAndPath
             if (enemy != null)
             {
                 // Initialize with waypoints and register this spawner.
-                enemy.Initialize(waypoints, this, nextEnemyIndex++);
+                // enemy.Initialize(waypoints, this, nextEnemyIndex++);
+                enemy.Initialize(GridWaypointContainer.Waypoints, this, nextEnemyIndex++);
             }
 
             spawnedObject.SetActive(true);
