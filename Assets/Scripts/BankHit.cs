@@ -9,7 +9,7 @@ namespace EnemyAndPath
         [SerializeField] private int maxHealth = 10;
         private int currentHealth;
         [Header("Rewards")]
-        [SerializeField] private int rewardAmount =20000;
+        [SerializeField] private int rewardAmount = 20000;
         public int MaxHealth => maxHealth;
         public int CurrentHealth => currentHealth;
         public event Action<BankHealth> OnDied;
@@ -49,7 +49,12 @@ namespace EnemyAndPath
         {
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                TakeDamage(1);
+                TakeDamage(10);
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.CompareTag("GunBullet"))
+            {
+                TakeDamage(4);
                 Destroy(collision.gameObject);
             }
         }

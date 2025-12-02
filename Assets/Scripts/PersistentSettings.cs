@@ -8,7 +8,7 @@ public class PersistentSettings : MonoBehaviour
     public bool optionObstacle = true;
     public bool targetOptionObstacle = true; // UIs/OptionColliderController
     public bool sellOption = true;
-    public bool targetSellOption = true;
+    public bool targetSellOption = true; // SettingSell
     public bool bankBreakable = true;
     public bool targetBankBreakable = true;
     public bool treeCuttable = true;
@@ -25,5 +25,22 @@ public class PersistentSettings : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public int numberBugRemaining()
+    {   
+        int remaining = 5;
+        if (!canPlaceOnPath)
+            remaining -= 1;
+        if (!optionObstacle)
+            remaining -= 1;
+        if (!sellOption)
+            remaining -= 1;
+        if (!bankBreakable)
+            remaining -= 1;
+        if (!treeCuttable)
+            remaining -= 1;
+
+        return remaining;
     }
 }
