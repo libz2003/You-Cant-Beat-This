@@ -16,7 +16,23 @@ public class StartScreenManager : MonoBehaviour
 
     void Awake()
     {
-        // Freeze the game at the very beginning
+        // If we already showed the start screen once in this app run,
+        // skip it entirely.
+        if (Universe.startScreenShown)
+        {
+            Time.timeScale = 1f;
+
+            if (startScreenPanel != null)
+            {
+                startScreenPanel.SetActive(false);
+            }
+
+            // Disable this script; it has nothing left to do
+            enabled = false;
+            return;
+        }
+
+        // First time: pause game and show the start screen
         Time.timeScale = 0f;
 
         if (startScreenPanel != null)
@@ -26,7 +42,6 @@ public class StartScreenManager : MonoBehaviour
 
         if (startScreenCanvasGroup != null)
         {
-            // Ensure it's fully visible at start
             startScreenCanvasGroup.alpha = 1f;
             startScreenCanvasGroup.interactable = true;
             startScreenCanvasGroup.blocksRaycasts = true;
@@ -43,13 +58,11 @@ public class StartScreenManager : MonoBehaviour
         if (gameStarted) return;
         gameStarted = true;
 
-        // Disable further clicks on the button immediately
         if (startButton != null)
         {
             startButton.interactable = false;
         }
 
-        // Start fade-out animation
         StartCoroutine(FadeOutAndStart());
     }
 
@@ -57,11 +70,13 @@ public class StartScreenManager : MonoBehaviour
     {
         if (startScreenCanvasGroup == null)
         {
-            // Fallback: if we forgot to assign the CanvasGroup, just hide instantly
+            // Fallback: no CanvasGroup assigned, just hide instantly
             if (startScreenPanel != null)
             {
                 startScreenPanel.SetActive(false);
             }
+
+            Universe.startScreenShown = true;
             Time.timeScale = 1f;
             yield break;
         }
@@ -70,13 +85,12 @@ public class StartScreenManager : MonoBehaviour
         float startAlpha = startScreenCanvasGroup.alpha;
         float endAlpha = 0f;
 
-        // Make sure panel blocks clicks while fading out
         startScreenCanvasGroup.interactable = false;
         startScreenCanvasGroup.blocksRaycasts = true;
 
         while (elapsed < fadeDuration)
         {
-            // Use unscaled time so this works while Time.timeScale = 0
+            // Use unscaled time so fade works while timeScale is 0
             elapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(elapsed / fadeDuration);
 
@@ -86,10 +100,7 @@ public class StartScreenManager : MonoBehaviour
             yield return null;
         }
 
-        // Fully invisible now
         startScreenCanvasGroup.alpha = 0f;
-
-        // Let gameplay clicks go through
         startScreenCanvasGroup.blocksRaycasts = false;
 
         if (startScreenPanel != null)
@@ -97,7 +108,10 @@ public class StartScreenManager : MonoBehaviour
             startScreenPanel.SetActive(false);
         }
 
-        // Finally, start the game
+        // Mark that we have shown it, so future loads skip it
+        Universe.startScreenShown = true;
+
+        // Now let the game run
         Time.timeScale = 1f;
     }
 }
