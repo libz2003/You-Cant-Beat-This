@@ -52,6 +52,16 @@ public class Universe : MonoBehaviour
             // TODO: audio
             PersistentSettings.instance.sellOption = PersistentSettings.instance.targetSellOption;
         }
+        if (PersistentSettings.instance.bankBreakable != PersistentSettings.instance.targetBankBreakable)
+        {
+            // TODO: audio
+            PersistentSettings.instance.bankBreakable = PersistentSettings.instance.targetBankBreakable;
+        }
+        if (PersistentSettings.instance.treeCuttable != PersistentSettings.instance.targetTreeCuttable)
+        {
+            // TODO: audio
+            PersistentSettings.instance.treeCuttable = PersistentSettings.instance.targetTreeCuttable;
+        }
         Time.timeScale = 1f;
         SceneManager.LoadScene(MainScene);
     }
