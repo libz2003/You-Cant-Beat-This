@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 673144593}
   - component: {fileID: 673144595}
   - component: {fileID: 673144594}
+  - component: {fileID: 673144596}
   m_Layer: 5
   m_Name: StartScreenPanel
   m_TagString: Untagged
@@ -671,6 +672,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673144592}
   m_CullTransparentMesh: 1
+--- !u!225 &673144596
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673144592}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &690018661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4055,6 +4068,7 @@ GameObject:
   - component: {fileID: 1827487450}
   - component: {fileID: 1827487449}
   - component: {fileID: 1827487452}
+  - component: {fileID: 1827487453}
   m_Layer: 0
   m_Name: Universe
   m_TagString: Untagged
@@ -4121,6 +4135,22 @@ MonoBehaviour:
   WinScene: Win
   MainScene: You_Cant_Beat_This
   TestAgainScene: TestAgain
+--- !u!114 &1827487453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827487448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d906434416aa03042929fbe545381ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartScreenManager
+  startScreenPanel: {fileID: 673144592}
+  startScreenCanvasGroup: {fileID: 673144596}
+  startButton: {fileID: 1347039959}
+  fadeDuration: 0.3
 --- !u!1 &1840325799
 GameObject:
   m_ObjectHideFlags: 0
