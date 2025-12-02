@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class TowerSell : MonoBehaviour
 {
@@ -11,30 +9,15 @@ public class TowerSell : MonoBehaviour
     [Tooltip("Percentage of cost refunded when selling.")]
     public float sellRefundPercent = 0.7f;
 
-    void OnMouseOver()
+    public void SellTower()
     {
-        // Ignore if pointer is over UI
-        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
-            return;
-
-        if (Mouse.current == null)
-            return;
-
-        // Right-click to sell
-        if (Mouse.current.rightButton.wasPressedThisFrame)
-        {
-            Sell();
-        }
-    }
-
-    void Sell()
-    {
-        // Compute refund
         int refund = Mathf.RoundToInt(buildCost * sellRefundPercent);
         if (refund > 0)
         {
             PlayerStats.Money += refund;
         }
+
+        // TODO: play some audio / particle FX here if you want
 
         Destroy(gameObject);
     }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7683950740491708689}
   - component: {fileID: 5755490191908337354}
-  - component: {fileID: -3959044964737782611}
   - component: {fileID: -5396413054577792876}
+  - component: {fileID: 4225866536450302511}
   m_Layer: 0
   m_Name: Cannon_Tower
   m_TagString: Tower
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2553735249158607977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.71003187, z: 0, w: 0.70416963}
-  m_LocalPosition: {x: 0, y: -47.9, z: -0.39}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -55,8 +55,22 @@ MonoBehaviour:
   enemyTag: Enemy
   bulletPrefab: {fileID: 7917005678022134715, guid: 70e7d6d7544e44c91b58c1850d82b948, type: 3}
   firePoint: {fileID: 1028926666608798423}
---- !u!65 &-3959044964737782611
-BoxCollider:
+--- !u!114 &-5396413054577792876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2553735249158607977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e26caa52bac834daf1a2021803e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerSell
+  buildCost: 0
+  sellRefundPercent: 1
+--- !u!136 &4225866536450302511
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -73,23 +87,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &-5396413054577792876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2553735249158607977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3e26caa52bac834daf1a2021803e645, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TowerSell
-  buildCost: 0
-  sellRefundPercent: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2557085384441817192
 GameObject:
   m_ObjectHideFlags: 0
