@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4268570111676256473}
   - component: {fileID: 2203346700314655254}
   - component: {fileID: 5780757100709759419}
+  - component: {fileID: -2480027550102605518}
   m_Layer: 0
   m_Name: GunShooter
   m_TagString: Untagged
@@ -78,6 +79,20 @@ CapsuleCollider:
   m_Height: 8.788858
   m_Direction: 1
   m_Center: {x: -0.078274965, y: 2.8230276, z: 0.036436558}
+--- !u!114 &-2480027550102605518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529306906193240519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e26caa52bac834daf1a2021803e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerSell
+  buildCost: 0
+  sellRefundPercent: 1
 --- !u!1 &1921309098456806647
 GameObject:
   m_ObjectHideFlags: 0

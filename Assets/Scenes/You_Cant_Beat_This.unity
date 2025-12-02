@@ -4021,8 +4021,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersistentSettings
   canPlaceOnPath: 1
+  targetCanPlaceOnPath: 1
   optionObstacle: 1
+  targetOptionObstacle: 1
   sellOption: 1
+  targetSellOption: 1
 --- !u!4 &1840325801
 Transform:
   m_ObjectHideFlags: 0

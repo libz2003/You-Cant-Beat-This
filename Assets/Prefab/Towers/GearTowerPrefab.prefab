@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3237839997175681396}
   - component: {fileID: 2230195777903078518}
+  - component: {fileID: 3204732247655628237}
+  - component: {fileID: 924409379943600288}
   m_Layer: 0
   m_Name: GearTowerPrefab
   m_TagString: Untagged
@@ -53,6 +55,43 @@ MonoBehaviour:
   enemyTag: Enemy
   bulletPrefab: {fileID: 7917005678022134715, guid: 4fe2181a704b8bc469e3c21062f86ee8, type: 3}
   firePoint: {fileID: 4776993392768052554}
+--- !u!114 &3204732247655628237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638047407703268130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e26caa52bac834daf1a2021803e645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerSell
+  buildCost: 0
+  sellRefundPercent: 1
+--- !u!136 &924409379943600288
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638047407703268130}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6481810195994827992
 GameObject:
   m_ObjectHideFlags: 0
