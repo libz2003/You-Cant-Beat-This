@@ -112,7 +112,7 @@ public class Turret : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // TODO: audio
-            PersistentSettings.instance.targetCanPlaceOnPath = False;
+            PersistentSettings.instance.targetCanPlaceOnPath = false;
         }
     }
 
