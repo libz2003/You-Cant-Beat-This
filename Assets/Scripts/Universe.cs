@@ -1,10 +1,13 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Universe : MonoBehaviour
 {
     public static Universe instance;
+
+    // Has the start screen already been shown in this app run?
+    public static bool startScreenShown = false;
+
     public string LoseScene;
     public string WinScene;
     public string MainScene;
