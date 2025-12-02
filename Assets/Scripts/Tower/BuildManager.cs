@@ -171,7 +171,15 @@ public class BuildManager : MonoBehaviour
         
         if (PersistentSettings.instance.canPlaceOnPath || !pointIsOnPath(hitPoint, GridWaypointContainer.Waypoints))
         {
-            Instantiate(turretToBuild, hitPoint, Quaternion.identity);
+            GameObject turretInstance = Instantiate(turretToBuild, hitPoint, Quaternion.identity);
+
+            // If the placed tower is sellable, record how much it cost
+            TowerSell sellComp = turretInstance.GetComponent<TowerSell>();
+            if (sellComp != null)
+            {
+                sellComp.buildCost = turretCost;
+            }
+
             PlayerStats.Money -= turretCost;
             UnsetTurretToBuild();
             return true;

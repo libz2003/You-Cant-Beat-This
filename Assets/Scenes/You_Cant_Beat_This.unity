@@ -3925,7 +3925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abfd3682387647e38a814e3d3191983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildManager
-  canPlaceOnPath: 0
   pathWidth: 80
 --- !u!114 &1827487450
 MonoBehaviour:
@@ -4018,8 +4017,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PersistentSettings
   canPlaceOnPath: 1
+  targetCanPlaceOnPath: 1
   optionObstacle: 1
+  targetOptionObstacle: 1
   sellOption: 1
+  targetSellOption: 1
 --- !u!4 &1840325801
 Transform:
   m_ObjectHideFlags: 0
