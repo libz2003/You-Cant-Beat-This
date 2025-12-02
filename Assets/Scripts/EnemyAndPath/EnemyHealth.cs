@@ -78,7 +78,7 @@ namespace EnemyAndPath
             }
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                TakeDamage(10);
+                TakeDamage(20);
             }
         }
 
