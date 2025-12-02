@@ -27,15 +27,10 @@ public class GearBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Enemy"))
-        {
-            return;
-        }
-
-        HitTarget(other.gameObject);
+        HitTarget();
     }
 
-    private void HitTarget(GameObject target)
+    private void HitTarget()
     {
         if (bulletImpactEffect != null)
         {
@@ -43,13 +38,5 @@ public class GearBullet : MonoBehaviour
                 Instantiate(bulletImpactEffect, transform.position, transform.rotation);
             Destroy(effectInstance, 2.0f);
         }
-
-        EnemyHealth health = target.GetComponent<EnemyHealth>();
-        if (health != null)
-        {
-            health.TakeDamage(damage);
-        }
-
-        Destroy(gameObject);
     }
 }

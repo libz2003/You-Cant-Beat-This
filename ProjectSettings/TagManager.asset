@@ -10,14 +10,16 @@ TagManager:
   - Tower
   - Bullet
   - GunBullet
+  - GearBullet
+  - Tree
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - IgnoreGround
   - 
   - 
   - 
