@@ -8,6 +8,6 @@ public class RemainingBugsUI : MonoBehaviour
 
     void Start()
     {
-        remainingBugText.text = "The God of Bug tells you there are " + PersistentSettings.instance.numberBugRemaining().ToString() + " Bugs remaining.";
+        remainingBugText.text = "The God of Bug tells you there is " + PersistentSettings.instance.numberBugRemaining().ToString() + " Bug remaining.";
     }
 }
