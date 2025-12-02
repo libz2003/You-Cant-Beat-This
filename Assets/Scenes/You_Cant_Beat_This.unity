@@ -3623,19 +3623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ce75eff023a466d9629252461bea99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAndPath.Spawner
-  waypoints:
-  - {fileID: 1182093908}
-  - {fileID: 913251104}
-  - {fileID: 1850869260}
-  - {fileID: 874587768}
-  - {fileID: 1824752933}
-  - {fileID: 957103420}
-  - {fileID: 1796614120}
-  - {fileID: 995917008}
-  - {fileID: 1190292748}
-  - {fileID: 1819789298}
-  - {fileID: 132840982}
-  - {fileID: 1392892609}
   remainingSpawnNumber: 10
   spawnInterval: 2
 --- !u!114 &1322745783
@@ -3815,13 +3802,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1682811194747856728, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4056604
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682811194747856728, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
+      propertyPath: m_Color.g
+      value: 0.009567461
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682811194747856728, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
+      propertyPath: m_Color.r
+      value: 0.06550582
+      objectReference: {fileID: 0}
     - target: {fileID: 2553735249158607977, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
       propertyPath: m_Name
       value: CannonGhost
       objectReference: {fileID: 0}
+    - target: {fileID: 2553735249158607977, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 502.65982
+      value: 972
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3829,7 +3832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 555.49243
+      value: 237
       objectReference: {fileID: 0}
     - target: {fileID: 7683950740491708689, guid: abf01c122e4f81f4cb5ad15e78fd1fbc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5698,6 +5701,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5217362726015325347, guid: 42ff8e420f63d47aa8bb32545135906c, type: 3}
+      propertyPath: m_Color.b
+      value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217362726015325347, guid: 42ff8e420f63d47aa8bb32545135906c, type: 3}
+      propertyPath: m_Color.g
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 5217362726015325347, guid: 42ff8e420f63d47aa8bb32545135906c, type: 3}
+      propertyPath: m_Color.r
+      value: 0.06666667
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5711,6 +5726,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1095464656158182688, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095464656158182688, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095464656158182688, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 1243298957525724182, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 476.49005
@@ -5758,6 +5785,18 @@ PrefabInstance:
     - target: {fileID: 7512543648113564095, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539561627719222432, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.40392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539561627719222432, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.007843138
+      objectReference: {fileID: 0}
+    - target: {fileID: 8539561627719222432, guid: 0f9fd233c2c6049a5abde4af9abed7cb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.06666667
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
