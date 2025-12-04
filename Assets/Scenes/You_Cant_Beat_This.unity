@@ -5880,9 +5880,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423be158c08843c598bab71051ceea9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundEffectManager
-  explosion: {fileID: 8300000, guid: 961d05e0b93514a828825b22349d8ec0, type: 3}
-  gunShoot: {fileID: 8300000, guid: 9888bc9d31a3443e0b9885734889a94d, type: 3}
+  explosion: {fileID: 8300000, guid: bc2d3f638566c4f11900b509331a1e9f, type: 3}
+  gunShoot: {fileID: 8300000, guid: 7e14606fe8cf84aa0ac4ebb894913fdf, type: 3}
   gearShoot: {fileID: 8300000, guid: dee773a33cf0e4ff485a41bdc8019e67, type: 3}
+  bankExplosion: {fileID: 8300000, guid: 946b97528fced452da5c6df41734ba56, type: 3}
 --- !u!4 &1930475082
 Transform:
   m_ObjectHideFlags: 0

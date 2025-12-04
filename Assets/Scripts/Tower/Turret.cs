@@ -103,7 +103,7 @@ public class Turret : MonoBehaviour
         if (fireCountdown <= 0.0f)
         {
             Shoot();
-            fireCountdown = 1.0f / fireRate;
+            fireCountdown = 1.0f / (fireRate * Random.Range(0.8f, 1.2f));
         }
 
         fireCountdown -= Time.deltaTime;

@@ -14,6 +14,7 @@ public class SoundEffectManager: MonoBehaviour
     public AudioClip explosion;
     public AudioClip gunShoot;
     public AudioClip gearShoot;
+    public AudioClip bankExplosion;
 
     void Awake()
     {
@@ -30,6 +31,11 @@ public class SoundEffectManager: MonoBehaviour
     //     instance.audioSource.PlayOneShot(instance.enemyHurt);
     // }
 
+    public static void PlayBankExplosion()
+    {
+        instance.audioSource.PlayOneShot(instance.bankExplosion);
+    }
+
     public static void PlayExplosion()
     {
         instance.audioSource.PlayOneShot(instance.explosion);
@@ -37,7 +43,8 @@ public class SoundEffectManager: MonoBehaviour
 
     public static void PlayGunShoot()
     {
-        instance.audioSource.PlayOneShot(instance.gunShoot);
+        // play with 10% volume
+        instance.audioSource.PlayOneShot(instance.gunShoot, 0.1f);
     }
 
     public static void PlayGearShoot()
