@@ -84,6 +84,7 @@ public class BuildManager : MonoBehaviour
         {
             if (PlaceTurretOnGround())
             {
+                SoundEffectManager.PlayTowerBuild();
                 // PlayerStats.Money -= turretCost;
             }
         }

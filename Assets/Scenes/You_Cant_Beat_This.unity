@@ -5884,6 +5884,8 @@ MonoBehaviour:
   gunShoot: {fileID: 8300000, guid: 7e14606fe8cf84aa0ac4ebb894913fdf, type: 3}
   gearShoot: {fileID: 8300000, guid: dee773a33cf0e4ff485a41bdc8019e67, type: 3}
   bankExplosion: {fileID: 8300000, guid: 946b97528fced452da5c6df41734ba56, type: 3}
+  buttonClick: {fileID: 8300000, guid: dd209ca3d97184f649d1e75c3ae48251, type: 3}
+  towerBuild: {fileID: 8300000, guid: 365a48554f06544b7a69d64020030ce5, type: 3}
 --- !u!4 &1930475082
 Transform:
   m_ObjectHideFlags: 0

@@ -64,6 +64,7 @@ public class StartScreenManager : MonoBehaviour
         }
 
         StartCoroutine(FadeOutAndStart());
+        SoundEffectManager.PlayButton();
         AudioManager.Instance.PlaySFX(AudioManager.Instance.introduction);
     }
 

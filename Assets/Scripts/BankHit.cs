@@ -48,6 +48,7 @@ namespace EnemyAndPath
         private void Die()
         {
             SoundEffectManager.PlayBankExplosion();
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.bankReaction);
             PersistentSettings.instance.targetBankBreakable = false;
             OnDied?.Invoke(this);
             PlayerStats.Money += rewardAmount;

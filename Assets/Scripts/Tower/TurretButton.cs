@@ -11,6 +11,7 @@ public class TurretButton : MonoBehaviour
     public void PickTurret()
     {
         // check if BuildManager has the same turretToBuild
+        SoundEffectManager.PlayButton();
         if (BuildManager.instance.GetTurretToBuild() == turret)
         {
             // if yes, deselect it
