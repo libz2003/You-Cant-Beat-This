@@ -52,7 +52,9 @@ namespace EnemyAndPath
             OnDied?.Invoke(this);
             PlayerStats.Money += rewardAmount;
             // Destroy(gameObject);
-            transform.Find("Bank").GetComponent<Renderer>().enabled = false;
+            transform.Find("Smoke").gameObject.SetActive(true);
+            transform.Find("Nuke").gameObject.SetActive(true);
+            transform.Find("Fire").gameObject.SetActive(true);
         }
 
         private void OnCollisionEnter(Collision collision)
