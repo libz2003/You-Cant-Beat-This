@@ -13,6 +13,7 @@ public class GlitchSettings : MonoBehaviour
     }
     public void ToggleSettings()
     {
+        SoundEffectManager.PlayButton();
         isSettingsOpen = !isSettingsOpen;
         if (settingsPanel != null)
             settingsPanel.SetActive(isSettingsOpen);
@@ -23,6 +24,7 @@ public class GlitchSettings : MonoBehaviour
     }
     public void RestartLevel()
     {
+        SoundEffectManager.PlayButton();
         Time.timeScale = 1f;
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
