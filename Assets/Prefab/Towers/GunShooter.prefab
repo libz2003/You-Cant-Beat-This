@@ -56,6 +56,7 @@ MonoBehaviour:
   enemyTag: Enemy
   bulletPrefab: {fileID: 7917005678022134715, guid: f139c3dbc114a403d99332beb7f5dbe9, type: 3}
   firePoint: {fileID: 4164151065431709382}
+  playShots: 1
 --- !u!136 &5780757100709759419
 CapsuleCollider:
   m_ObjectHideFlags: 0

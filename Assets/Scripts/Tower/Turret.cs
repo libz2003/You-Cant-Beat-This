@@ -17,6 +17,8 @@ public class Turret : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    [Header("Sound Effect")] public bool playShots = false;
+
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
@@ -124,6 +126,11 @@ public class Turret : MonoBehaviour
         if (bullet != null)
         {
             bullet.Seek(target);
+
+            if (playShots)
+            {
+                SoundEffectManager.PlayGunShoot();
+            }
         }
     }
 }

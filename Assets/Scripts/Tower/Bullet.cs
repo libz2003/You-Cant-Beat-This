@@ -7,6 +7,9 @@ public class Bullet : MonoBehaviour
     public int damage = 10;
     public GameObject bulletImpactEffect;
 
+    [Header("Sound Effect")]
+    public bool playExplosionSound = false;
+
     public void Seek(Transform _target)
     {
         direction = (_target.position - transform.position);
@@ -47,7 +50,12 @@ public class Bullet : MonoBehaviour
         {
             GameObject effectInstance = (GameObject)Instantiate(bulletImpactEffect, transform.position, transform.rotation);
             Destroy(effectInstance, 2.0f);
+            
         }
+        
+        if (playExplosionSound)
+            SoundEffectManager.PlayExplosion();  // sound effect
+        
         Destroy(gameObject);
     }
 }

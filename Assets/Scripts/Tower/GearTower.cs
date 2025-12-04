@@ -83,6 +83,8 @@ public class GearTower : MonoBehaviour
                 bullet.Init(dir);
             }
         }
+        
+        SoundEffectManager.PlayGearShoot();
     }
 
     void OnDrawGizmosSelected()
