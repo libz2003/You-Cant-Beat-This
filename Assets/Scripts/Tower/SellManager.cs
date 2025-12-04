@@ -44,7 +44,7 @@ public class SellManager : MonoBehaviour
                 sellComp.SellTower();
 
                 // Match your SettingSell behavior
-                PersistentSettings.instance.targetSellOption = false;
+                //PersistentSettings.instance.targetSellOption = false;
             }
         }
     }
