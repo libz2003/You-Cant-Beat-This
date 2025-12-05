@@ -33,32 +33,49 @@ public class SoundEffectManager: MonoBehaviour
     //     instance.audioSource.PlayOneShot(instance.enemyHurt);
     // }
 
+    private static bool CanPlaySfx()
+    {
+        // If there's no AudioManager, allow SFX.
+        if (AudioManager.Instance == null)
+            return true;
+
+        // Block SFX while main audio is playing
+        return !AudioManager.IsMainAudioPlaying();
+    }
+
     public static void PlayTowerBuild()
     {
+        if (!CanPlaySfx()) return;
         instance.audioSource.PlayOneShot(instance.towerBuild, 2.0f);
     }
+
     public static void PlayButton()
     {
+        if (!CanPlaySfx()) return;
         instance.audioSource.PlayOneShot(instance.buttonClick);
     }
+
     public static void PlayBankExplosion()
     {
+        if (!CanPlaySfx()) return;
         instance.audioSource.PlayOneShot(instance.bankExplosion);
     }
 
     public static void PlayExplosion()
     {
+        if (!CanPlaySfx()) return;
         instance.audioSource.PlayOneShot(instance.explosion);
     }
 
     public static void PlayGunShoot()
     {
-        // play with 10% volume
+        if (!CanPlaySfx()) return;
         instance.audioSource.PlayOneShot(instance.gunShoot, 0.1f);
     }
 
     public static void PlayGearShoot()
     {
+        if (!CanPlaySfx()) return;
         instance.audioSource.PlayOneShot(instance.gearShoot);
     }
 

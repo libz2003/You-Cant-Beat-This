@@ -31,6 +31,11 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(RandomLoop());
     }
 
+    public static bool IsMainAudioPlaying()
+    {
+        return Instance != null && Instance.audioSource != null && Instance.audioSource.isPlaying;
+    }
+
     IEnumerator RandomLoop()
     {
         while (true)
