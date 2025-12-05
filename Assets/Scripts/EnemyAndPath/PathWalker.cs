@@ -12,7 +12,7 @@ public class PathWalker : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
     private int currentPointIndex = 0;
-    private Rigidbody rb;
+    private CharacterController characterController;
 
     // 0 = just spawned, 1 = reached/at the last waypoint.
     public float PathProgress
@@ -34,9 +34,7 @@ public class PathWalker : MonoBehaviour
     
     void Start()
     {
-        if (animator != null)
-            animator.SetBool("IsWalking", true);
-        rb = GetComponent<Rigidbody>();
+        characterController = GetComponent<CharacterController>();
     }
 
     /**
@@ -46,42 +44,40 @@ public class PathWalker : MonoBehaviour
     {
         this.waypoints = waypoints;
         currentPointIndex = 0;
-        // rb.position = waypoints[0].position;  // I don't know why this doesn't work
+        // transform.position = waypoints[0].position;  // I don't know why this doesn't work
         transform.position = waypoints[0].position;
     }
-    
+
     void FixedUpdate()
     {
-        if (hitting || waypoints.Length == 0) return;
+        if (waypoints.Length == 0) return;
 
         Transform target = waypoints[currentPointIndex];
-        Vector3 direction = (target.position - rb.position).normalized;
-        float distance = Vector3.Distance(rb.position, target.position);
+        Vector3 direction = (target.position - transform.position).normalized;
+        direction.y = 0;
+        direction = direction.normalized;
+        float distance = Vector3.Distance(transform.position, target.position);
 
         // 1. Move via Velocity instead of Position
         // We check distance to avoid jittering when very close
         if (distance > Time.fixedDeltaTime*moveSpeed*2)
         {
-            // Apply velocity to move toward target
-            rb.linearVelocity = direction * moveSpeed;
-            direction.y = 0;
-
-            // Optional: Face the target
             Quaternion lookRotation = Quaternion.LookRotation(direction);
-            rb.rotation = Quaternion.Slerp(rb.rotation, lookRotation, Time.fixedDeltaTime * turnSpeed);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * turnSpeed);
+
+            // change it to use character controller:
+            characterController.Move(direction * moveSpeed * Time.fixedDeltaTime);
 
             // bounding to path
             if(currentPointIndex != 0) {
                 Vector3 vecPath = waypoints[currentPointIndex].position - waypoints[currentPointIndex-1].position;
-                Vector3 vecPathVert = Vector3.Dot(vecPath.normalized, rb.position - waypoints[currentPointIndex-1].position) * vecPath.normalized;
-                rb.position = waypoints[currentPointIndex-1].position + vecPathVert;
+                Vector3 vecPathVert = Vector3.Dot(vecPath.normalized, transform.position - waypoints[currentPointIndex-1].position) * vecPath.normalized;
+                Vector3 offset = (waypoints[currentPointIndex-1].position + vecPathVert) - transform.position;
+                characterController.Move(offset);
             }
         }
         else
         {
-            // Stop moving when close
-            rb.linearVelocity = Vector3.zero;
-
             // Logic to switch to next waypoint
             currentPointIndex++;
             if (currentPointIndex >= waypoints.Length)

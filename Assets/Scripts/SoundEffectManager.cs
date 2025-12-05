@@ -17,6 +17,9 @@ public class SoundEffectManager: MonoBehaviour
     public AudioClip bankExplosion;
     public AudioClip buttonClick;
     public AudioClip towerBuild;
+    public AudioClip skeleDeath;
+    private float targetVolume = 1.0f;
+    private float volume = 1.0f;
 
     void Awake()
     {
@@ -33,50 +36,52 @@ public class SoundEffectManager: MonoBehaviour
     //     instance.audioSource.PlayOneShot(instance.enemyHurt);
     // }
 
-    private static bool CanPlaySfx()
+    void Update()
     {
-        // If there's no AudioManager, allow SFX.
-        if (AudioManager.Instance == null)
-            return true;
+        if (AudioManager.IsMainAudioPlaying())
+        {
+            targetVolume = 0.2f;
+        }
+        else
+        {
+            targetVolume = 1.0f;
+        }
 
-        // Block SFX while main audio is playing
-        return !AudioManager.IsMainAudioPlaying();
+        volume = Mathf.Lerp(volume, targetVolume, Time.deltaTime * 5f);
     }
 
     public static void PlayTowerBuild()
     {
-        if (!CanPlaySfx()) return;
-        instance.audioSource.PlayOneShot(instance.towerBuild, 2.0f);
+        instance.audioSource.PlayOneShot(instance.towerBuild, 2.0f * instance.volume);
+    }
+    public static void PlaySkeleDeath()
+    {
+        instance.audioSource.PlayOneShot(instance.skeleDeath, 1.0f * instance.volume);
     }
 
     public static void PlayButton()
     {
-        if (!CanPlaySfx()) return;
-        instance.audioSource.PlayOneShot(instance.buttonClick);
+        instance.audioSource.PlayOneShot(instance.buttonClick, 1.0f * instance.volume);
     }
 
     public static void PlayBankExplosion()
     {
-        if (!CanPlaySfx()) return;
-        instance.audioSource.PlayOneShot(instance.bankExplosion);
+        instance.audioSource.PlayOneShot(instance.bankExplosion, 1.0f * instance.volume);
     }
 
     public static void PlayExplosion()
     {
-        if (!CanPlaySfx()) return;
-        instance.audioSource.PlayOneShot(instance.explosion);
+        instance.audioSource.PlayOneShot(instance.explosion, 0.5f * instance.volume);
     }
 
     public static void PlayGunShoot()
     {
-        if (!CanPlaySfx()) return;
-        instance.audioSource.PlayOneShot(instance.gunShoot, 0.1f);
+        instance.audioSource.PlayOneShot(instance.gunShoot, 0.1f * instance.volume);
     }
 
     public static void PlayGearShoot()
     {
-        if (!CanPlaySfx()) return;
-        instance.audioSource.PlayOneShot(instance.gearShoot);
+        instance.audioSource.PlayOneShot(instance.gearShoot, 1.0f * instance.volume);
     }
 
 }

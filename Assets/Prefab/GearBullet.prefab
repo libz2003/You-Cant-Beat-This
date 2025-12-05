@@ -9709,6 +9709,7 @@ GameObject:
   - component: {fileID: 9175906403790080394}
   - component: {fileID: -6905077746084317544}
   - component: {fileID: 6522193323704159688}
+  - component: {fileID: 7127392259469218757}
   m_Layer: 0
   m_Name: GearBullet
   m_TagString: GearBullet
@@ -9803,7 +9804,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GearBullet
   speed: 700
   damage: 100
-  splatterRange: 50
   bulletImpactEffect: {fileID: 7523247084045052601, guid: 7ec887b1ef8d94ec8a3ea20ca4ebed49, type: 3}
 --- !u!135 &6522193323704159688
 SphereCollider:
@@ -9826,3 +9826,30 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1525
   m_Center: {x: -0.000000029802322, y: 0, z: 0.000000014901161}
+--- !u!54 &7127392259469218757
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7917005678022134715}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -75,12 +75,6 @@ namespace EnemyAndPath
                 TakeDamage(20);
                 Destroy(collision.gameObject);
             }
-            else if (collision.gameObject.CompareTag("Enemy"))
-            {
-                PlayerStats.Lives--;
-                if (PlayerStats.Lives == 0) Universe.instance.GameOver();
-                Destroy(collision.gameObject);
-            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -92,5 +86,6 @@ namespace EnemyAndPath
                 Destroy(other.gameObject);
             }
         }
+
     }
 }
