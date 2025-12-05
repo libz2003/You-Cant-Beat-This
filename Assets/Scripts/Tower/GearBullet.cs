@@ -35,12 +35,12 @@ public class GearBullet : MonoBehaviour
 
     private void HitTarget()
     {
-        if (bulletImpactEffect != null)
-        {
-            GameObject effectInstance =
-                Instantiate(bulletImpactEffect, transform.position, transform.rotation);
-            Destroy(effectInstance, 2.0f);
-        }
-        Destroy(gameObject);
+        // if (bulletImpactEffect != null)
+        // {
+        //     GameObject effectInstance =
+        //         Instantiate(bulletImpactEffect, transform.position, transform.rotation);
+        //     Destroy(effectInstance, 2.0f);
+        // }
+        //Destroy(gameObject);
     }
 }

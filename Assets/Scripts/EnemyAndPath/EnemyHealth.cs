@@ -48,7 +48,7 @@ namespace EnemyAndPath
             UpdateSlider();
             OnHealthChanged?.Invoke(this);
 
-            if (currentHealth == 0)
+            if (currentHealth == 0 && !isDead)
             {
                 isDead = true;
                 OnDied?.Invoke(this);
@@ -84,6 +84,7 @@ namespace EnemyAndPath
             {
                 TakeDamage(100);
             }
+            print("EnemyHealth collided with " + collision.gameObject.name);
         }
 
         private void OnTriggerEnter(Collider other)

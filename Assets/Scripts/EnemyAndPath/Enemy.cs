@@ -4,11 +4,10 @@ using UnityEngine;
 namespace EnemyAndPath
 {
     [RequireComponent(typeof(PathWalker))]
-    [RequireComponent(typeof(EnemyHealth))]
     public class Enemy : MonoBehaviour
     {
         public PathWalker Walker { get; private set; }
-        public EnemyHealth Health { get; private set; }
+        public EnemyHealth Health;
 
         public event Action<Enemy> OnEnemyDied;
 
@@ -19,7 +18,8 @@ namespace EnemyAndPath
         private void Awake()
         {
             Walker = GetComponent<PathWalker>();
-            Health = GetComponent<EnemyHealth>();
+            // children get health
+            Health = transform.Find("hitbox").GetComponent<EnemyHealth>();
         }
 
         private void OnEnable()
@@ -27,6 +27,10 @@ namespace EnemyAndPath
             if (Health != null)
             {
                 Health.OnDied += HandleDied;
+                gameObject.GetComponent<Animator>().enabled = true;
+                gameObject.GetComponent<PathWalker>().enabled = true;
+                gameObject.GetComponent<CharacterController>().enabled = true;
+                gameObject.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
 
@@ -68,7 +72,13 @@ namespace EnemyAndPath
             OnEnemyDied?.Invoke(this);
 
             // Disable the enemy. OnDisable will notify the spawner that we are finished.
-            gameObject.SetActive(false);
+            SoundEffectManager.PlaySkeleDeath();
+            gameObject.GetComponent<Animator>().enabled = false;
+            gameObject.GetComponent<PathWalker>().enabled = false;
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            Destroy(gameObject, 1.0f);
         }
+
     }
 }

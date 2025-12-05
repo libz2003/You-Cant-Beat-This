@@ -7,10 +7,10 @@ namespace EnemyAndPath
     {
         // public Transform[] waypoints; // now use GridWaypointContainer.Waypoints 
         public int remainingSpawnNumber = 15;
+        public GameObject enemyPrefab;
 
         [SerializeField] private float spawnInterval = 1f;
 
-        private ObjectPooler pool;
         private float _spawnTimer;
 
         // Wave tracking
@@ -22,7 +22,6 @@ namespace EnemyAndPath
 
         private void Start()
         {
-            pool = GetComponent<ObjectPooler>();
             _spawnTimer = spawnInterval;
         }
 
@@ -52,7 +51,7 @@ namespace EnemyAndPath
 
         private void SpawnEnemy()
         {
-            GameObject spawnedObject = pool.GetPooledObject();
+            GameObject spawnedObject = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             if (spawnedObject == null)
             {
                 Debug.LogWarning("Spawner: ObjectPooler returned null pooled object.");
