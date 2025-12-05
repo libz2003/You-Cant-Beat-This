@@ -12,11 +12,15 @@ public class WinScreenBadges : MonoBehaviour
 
     [Header("Colors")]
     public Color lockedColor = Color.gray;
-    public Color unlockedColor = Color.white;
+
+    public Color unlockedColor = new Color(255, 255, 255, 200);
 
     void OnEnable()
     {
         UpdateIcons();
+
+        // TestAllOn();
+        // TestAllOff();
     }
 
     void UpdateIcons()
@@ -34,6 +38,24 @@ public class WinScreenBadges : MonoBehaviour
         SetIcon(sellOptionImage, !PersistentSettings.instance.targetSellOption);
         SetIcon(bankBreakableImage, !PersistentSettings.instance.targetBankBreakable);
         SetIcon(treeCuttableImage, !PersistentSettings.instance.targetTreeCuttable);
+    }
+
+    void TestAllOn()
+    {
+        SetIcon(canPlaceOnPathImage, true);
+        SetIcon(optionObstacleImage, true);
+        SetIcon(sellOptionImage, true);
+        SetIcon(bankBreakableImage, true);
+        SetIcon(treeCuttableImage, true);
+    }
+    
+    void TestAllOff()
+    {
+        SetIcon(canPlaceOnPathImage, false);
+        SetIcon(optionObstacleImage, false);
+        SetIcon(sellOptionImage, false);
+        SetIcon(bankBreakableImage, false);
+        SetIcon(treeCuttableImage, false);
     }
 
     void SetIcon(Image img, bool unlocked)
