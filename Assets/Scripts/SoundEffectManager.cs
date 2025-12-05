@@ -71,7 +71,7 @@ public class SoundEffectManager: MonoBehaviour
 
     public static void PlayExplosion()
     {
-        instance.audioSource.PlayOneShot(instance.explosion, 0.5f * instance.volume);
+        instance.audioSource.PlayOneShot(instance.explosion, 0.1f * instance.volume);
     }
 
     public static void PlayGunShoot()
