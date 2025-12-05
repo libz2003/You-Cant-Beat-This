@@ -17,10 +17,10 @@ public class WinScreenBadges : MonoBehaviour
 
     void OnEnable()
     {
-        // UpdateIcons();
+        UpdateIcons();
 
         // TestAllOn();
-        TestAllOff();
+        // TestAllOff();
     }
 
     void UpdateIcons()
