@@ -5393,7 +5393,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a8083a2530773400298eb0d4e5b8c318, type: 3}
   - {fileID: 8300000, guid: c8074065c4d0e4918b2f02f54ac29034, type: 3}
   - {fileID: 8300000, guid: 01da170dce0f747988dc9255d1e2ede7, type: 3}
-  - {fileID: 8300000, guid: 8a29cf63d63f342fda0867c4341ff52e, type: 3}
   bankHint: {fileID: 8300000, guid: 8a29cf63d63f342fda0867c4341ff52e, type: 3}
   bankReaction: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
   towerHint: {fileID: 8300000, guid: 92455864dfd084a95b834ddbb4396e70, type: 3}
@@ -5414,6 +5413,33 @@ MonoBehaviour:
     subtitle: Every game I've ever played has been too easy. They call me the GOAT.
       But I'm a gamer, not a programmer, so I vibe coded this entire game. And I
       can say for sure that unless you're me, you can't beat this.
+  - clip: {fileID: 8300000, guid: 8a29cf63d63f342fda0867c4341ff52e, type: 3}
+    subtitle: Every other tower defense game ever has given you money for killing
+      enemies. Until now. That's innovation.
+  - clip: {fileID: 8300000, guid: 70bbb022f2bd44c3dbea5a49fbb65682, type: 3}
+    subtitle: "You're already screwed on this run. Just give up and retry at this
+      point\u2026"
+  - clip: {fileID: 8300000, guid: 641abc719976d414489112503e4e8cfb, type: 3}
+    subtitle: I don't know why ChatGPT added trees. I didn't even ask for them.
+  - clip: {fileID: 8300000, guid: feb47912349414c81a00a7ccf448577f, type: 3}
+    subtitle: The gear tower is great. Too bad you're so poor, you're never going
+      to see it.
+  - clip: {fileID: 8300000, guid: 92455864dfd084a95b834ddbb4396e70, type: 3}
+    subtitle: Ha, look at how much HP those guys have. They're just going to march
+      right through your towers.
+  - clip: {fileID: 8300000, guid: 777b15b77860941bca98ebd72add09f8, type: 3}
+    subtitle: Right click to sell a tower
+  - clip: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
+    subtitle: What? How is that even possible? Whatever, hey ChatGPT. Fix the bank.
+  - clip: {fileID: 8300000, guid: 6ad370c609eee4669b014858f29bcd30, type: 3}
+    subtitle: "ChatGPT, patch that. You should know this by now\u2026 "
+  - clip: {fileID: 8300000, guid: 54513b67e21db4dbeb56dd984de3f091, type: 3}
+    subtitle: "I swear I didn't ask for this. Fix\u2026whatever they just did."
+  - clip: {fileID: 8300000, guid: 78b1648ba26884ee1b4f013e5f186995, type: 3}
+    subtitle: "ChatGPT, have you ever even played a tower defense game? Fix it\u2026 "
+  - clip: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
+    subtitle: "Uhhhh\u2026ChatGPT delete all these trees. I never wanted these in
+      the first place! "
 --- !u!1 &1840325799
 GameObject:
   m_ObjectHideFlags: 0
@@ -5453,6 +5479,7 @@ MonoBehaviour:
   targetBankBreakable: 1
   treeCuttable: 1
   targetTreeCuttable: 1
+  playHint: 0
 --- !u!4 &1840325801
 Transform:
   m_ObjectHideFlags: 0

@@ -117,9 +117,9 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHint()
     {
-        if (PersistentSettings.instance.canPlaceOnPath)
-            PlaySFX(towerHint);
-        else if (PersistentSettings.instance.treeCuttable)
+        // if (PersistentSettings.instance.canPlaceOnPath)
+        //     PlaySFX(towerHint);
+        if (PersistentSettings.instance.treeCuttable)
             PlaySFX(treeHint);
         else if (PersistentSettings.instance.sellOption)
             PlaySFX(settingsHint);
