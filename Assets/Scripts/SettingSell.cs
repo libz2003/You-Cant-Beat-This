@@ -12,7 +12,7 @@ public class SettingSell : MonoBehaviour, IPointerClickHandler
                 {   
                     SellOption();
                     PersistentSettings.instance.targetSellOption = false;
-                    AudioManager.Instance.PlaySFX(AudioManager.Instance.settingsReaction);
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.settingsReaction, true);
                 }
                 break;
         }

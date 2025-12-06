@@ -108,11 +108,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, bool interrupt = false)
     {
         // Debug.Log("Attempted to play sound");
         if (clip != null)
-            StartCoroutine(PlaySFXCoroutine(clip));
+            StartCoroutine(PlaySFXCoroutine(clip, interrupt));
     }
 
     public void PlayHint()
@@ -129,11 +129,13 @@ public class AudioManager : MonoBehaviour
             PlaySFX(bankHint);
     }
 
-    private IEnumerator PlaySFXCoroutine(AudioClip clip)
+    private IEnumerator PlaySFXCoroutine(AudioClip clip, bool interrupt = false)
     {
         // Debug.Log("Entered coroutine");
-        yield return new WaitUntil(() => !audioSource.isPlaying);
-        audioSource.clip = clip;
+        if (interrupt)
+            audioSource.Stop();
+        else
+            yield return new WaitUntil(() => !audioSource.isPlaying);
         audioSource.clip = clip;
         audioSource.Play();
 

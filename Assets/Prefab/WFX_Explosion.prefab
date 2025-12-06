@@ -38718,7 +38718,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 6
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-1345484562748839543
 MonoBehaviour:
@@ -38732,7 +38732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da935164b1b8f49639e396dd99bd166f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeactivateExplode
-  timeToDeactivate: 0.1
+  timeToDeactivate: 0.3
 --- !u!1 &9210907083572757968
 GameObject:
   m_ObjectHideFlags: 0

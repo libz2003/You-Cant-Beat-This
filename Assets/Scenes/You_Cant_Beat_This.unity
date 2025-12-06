@@ -3402,7 +3402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ce75eff023a466d9629252461bea99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAndPath.Spawner
-  remainingSpawnNumber: 15
+  remainingSpawnNumber: 10
   enemyPrefab: {fileID: 9199120888985291342, guid: 9d6d336121b1d479294d59a1b767d1f4, type: 3}
   spawnInterval: 2
 --- !u!4 &1322745784
@@ -5428,7 +5428,7 @@ MonoBehaviour:
     subtitle: Ha, look at how much HP those guys have. They're just going to march
       right through your towers.
   - clip: {fileID: 8300000, guid: 777b15b77860941bca98ebd72add09f8, type: 3}
-    subtitle: Right click to sell a tower
+    subtitle: Right click to sell a tower! Protect the bank!
   - clip: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
     subtitle: What? How is that even possible? Whatever, hey ChatGPT. Fix the bank.
   - clip: {fileID: 8300000, guid: 6ad370c609eee4669b014858f29bcd30, type: 3}
@@ -6148,6 +6148,8 @@ MonoBehaviour:
   buttonClick: {fileID: 8300000, guid: dd209ca3d97184f649d1e75c3ae48251, type: 3}
   towerBuild: {fileID: 8300000, guid: 365a48554f06544b7a69d64020030ce5, type: 3}
   skeleDeath: {fileID: 8300000, guid: 8953d9ac70c154f178af3ac4f7355b11, type: 3}
+  skeleAggro: {fileID: 8300000, guid: ff5f38b1314e3472d99460d05a9ac40c, type: 3}
+  sellTower: {fileID: 8300000, guid: a1e772eb481ed4b7c96391b2e695a6d6, type: 3}
 --- !u!4 &1930475082
 Transform:
   m_ObjectHideFlags: 0

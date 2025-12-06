@@ -26,6 +26,11 @@ public class GlitchSettings : MonoBehaviour
     {
         SoundEffectManager.PlayButton();
         Time.timeScale = 1f;
+        PersistentSettings.instance.targetCanPlaceOnPath = PersistentSettings.instance.canPlaceOnPath;
+        PersistentSettings.instance.targetOptionObstacle = PersistentSettings.instance.optionObstacle;
+        PersistentSettings.instance.targetSellOption = PersistentSettings.instance.sellOption;
+        PersistentSettings.instance.targetBankBreakable = PersistentSettings.instance.bankBreakable;
+        PersistentSettings.instance.targetTreeCuttable = PersistentSettings.instance.treeCuttable;
         AudioManager.Instance.PlayHint();
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);

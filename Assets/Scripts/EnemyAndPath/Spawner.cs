@@ -66,6 +66,7 @@ namespace EnemyAndPath
                 enemy.Initialize(GridWaypointContainer.Waypoints, this, nextEnemyIndex++);
             }
 
+
             spawnedObject.SetActive(true);
             remainingSpawnNumber--;
             spawnedCount++;

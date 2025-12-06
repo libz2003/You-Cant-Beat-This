@@ -18,6 +18,8 @@ public class SoundEffectManager: MonoBehaviour
     public AudioClip buttonClick;
     public AudioClip towerBuild;
     public AudioClip skeleDeath;
+    public AudioClip skeleAggro;
+    public AudioClip sellTower;
     private float targetVolume = 1.0f;
     private float volume = 1.0f;
 
@@ -48,16 +50,33 @@ public class SoundEffectManager: MonoBehaviour
         }
 
         volume = Mathf.Lerp(volume, targetVolume, Time.deltaTime * 5f);
+
+        if (!audioSource.isPlaying && !AudioManager.IsMainAudioPlaying())
+        {
+            if (Random.Range(0f, 1f) < 0.0015f * Time.deltaTime * 60f)
+            {
+                PlaySkeleAggro();
+            }
+        }
     }
 
+    public static void PlayTowerSell()
+    {
+        instance.audioSource.PlayOneShot(instance.sellTower, 1.0f * instance.volume);
+    }
     public static void PlayTowerBuild()
     {
         instance.audioSource.PlayOneShot(instance.towerBuild, 2.0f * instance.volume);
+    }
+    public static void PlaySkeleAggro()
+    {
+        instance.audioSource.PlayOneShot(instance.skeleAggro, 0.5f * instance.volume);
     }
     public static void PlaySkeleDeath()
     {
         instance.audioSource.PlayOneShot(instance.skeleDeath, 1.0f * instance.volume);
     }
+
 
     public static void PlayButton()
     {

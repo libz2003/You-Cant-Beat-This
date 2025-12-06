@@ -11,6 +11,8 @@ public class TreeTip : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
             rb.isKinematic = true;
             col.isTrigger = false;
+            PersistentSettings.instance.targetTreeCuttable = false;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.treeReaction, true);
         }
     }
 }

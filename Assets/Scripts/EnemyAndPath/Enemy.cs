@@ -21,7 +21,6 @@ namespace EnemyAndPath
             // children get health
             Health = transform.Find("hitbox").GetComponent<EnemyHealth>();
         }
-
         private void OnEnable()
         {
             if (Health != null)
@@ -77,6 +76,9 @@ namespace EnemyAndPath
             gameObject.GetComponent<PathWalker>().enabled = false;
             gameObject.GetComponent<CharacterController>().enabled = false;
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            // add force at head to the right so it falls
+            Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+            rb.AddForceAtPosition(transform.right * 10f, transform.position + new Vector3(0, 100, 0), ForceMode.Impulse);
             Destroy(gameObject, 1.0f);
         }
 

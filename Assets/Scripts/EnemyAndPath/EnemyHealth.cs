@@ -78,13 +78,12 @@ namespace EnemyAndPath
             }
             if (collision.gameObject.CompareTag("Bullet"))
             {
-                TakeDamage(4);
+                TakeDamage(3);
             }
             if (collision.gameObject.CompareTag("GearBullet"))
             {
                 TakeDamage(100);
             }
-            print("EnemyHealth collided with " + collision.gameObject.name);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -95,7 +94,7 @@ namespace EnemyAndPath
             }
             if (other.gameObject.CompareTag("BigExplode"))
             {
-                TakeDamage(6);
+                TakeDamage(4);
             }
         }
 

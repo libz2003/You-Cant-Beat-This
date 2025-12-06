@@ -16,6 +16,7 @@ public class TowerSell : MonoBehaviour
         {
             PlayerStats.Money += refund;
         }
+        SoundEffectManager.PlayTowerSell();
 
         // TODO: play some audio / particle FX here if you want
 

@@ -55,6 +55,7 @@ MonoBehaviour:
   enemyTag: Enemy
   bulletPrefab: {fileID: 7917005678022134715, guid: 70e7d6d7544e44c91b58c1850d82b948, type: 3}
   firePoint: {fileID: 1028926666608798423}
+  maxDistanceFromPath: 35
   playShots: 0
 --- !u!114 &-5396413054577792876
 MonoBehaviour:

@@ -16,12 +16,26 @@ public class Turret : MonoBehaviour
     public string enemyTag = "Enemy";
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public float maxDistanceFromPath = 5.0f;
 
     [Header("Sound Effect")] public bool playShots = false;
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0.0f, 0.5f);
+
+        Transform[] waypoints = Map.GridWaypointContainer.Waypoints; 
+        for (int i = 0; i < waypoints.Length-1; i++)
+        {
+            Vector3 pathDir = (waypoints[i+1].position - waypoints[i].position).normalized;
+            Vector3 pathVert = Mathf.Clamp(Vector3.Dot(pathDir, transform.position - waypoints[i].position), 0, Vector3.Distance(waypoints[i].position, waypoints[i+1].position)) * pathDir;
+            float distanceFromPath = (waypoints[i].position + pathVert - transform.position).magnitude;
+            if (distanceFromPath < maxDistanceFromPath)
+            {
+                onPath();
+                break;
+            }
+        }
     }
 
     void OnDrawGizmosSelected()
@@ -109,18 +123,15 @@ public class Turret : MonoBehaviour
         fireCountdown -= Time.deltaTime;
     }
 
-    void OnTriggerEnter(Collider other)
+    private void onPath()
     {
         if (!PersistentSettings.instance.canPlaceOnPath)
         {
             return;
         }
 
-        if (other.CompareTag("Enemy") && PersistentSettings.instance.targetCanPlaceOnPath)
-        {
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.towerReaction);
-            PersistentSettings.instance.targetCanPlaceOnPath = false;
-        }
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.towerReaction, true);
+        PersistentSettings.instance.targetCanPlaceOnPath = false;
     }
 
     void Shoot()
