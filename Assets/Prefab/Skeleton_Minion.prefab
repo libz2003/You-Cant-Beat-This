@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4886259515948261752}
   m_Layer: 0
   m_Name: hitbox
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -456,15 +456,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd5f1bdb91d3342388fc13d8872e5cb3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 140.19957
+      value: 14376.764
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd5f1bdb91d3342388fc13d8872e5cb3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000015258789
+      value: 68.363464
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd5f1bdb91d3342388fc13d8872e5cb3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 626.28894
+      value: 35423.773
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fd5f1bdb91d3342388fc13d8872e5cb3, type: 3}
       propertyPath: m_LocalRotation.w

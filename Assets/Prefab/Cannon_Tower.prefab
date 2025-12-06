@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Turret
   range: 150
-  fireRate: 1
+  fireRate: 0.6
   rotationSpeed: 10
   tooCloseRange: 30
   enemyTag: Enemy

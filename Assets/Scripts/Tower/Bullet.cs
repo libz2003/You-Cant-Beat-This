@@ -34,6 +34,10 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             other.gameObject.GetComponent<Rigidbody>().AddForce(direction * 200.0f);
         }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            HitTarget();
+        }
     }   
 
     private void OnCollisionEnter(Collision other)

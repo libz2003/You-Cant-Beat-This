@@ -23,11 +23,13 @@ namespace EnemyAndPath
         public event Action<EnemyHealth> OnDied;
 
         private bool isDead;
+        private bool touchTower = false;
 
         private void OnEnable()
         {
             // When re-used from a pool, reset state.
             isDead = false;
+            touchTower = false;
             ResetHealth();
         }
 
@@ -66,28 +68,26 @@ namespace EnemyAndPath
             OnHealthChanged?.Invoke(this);
         }
 
-        /// <summary>
-        /// Optional: basic collision-based damage.
-        /// </summary>
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            // Keep this for compatibility with your current towers.
-            if (collision.gameObject.CompareTag("GunBullet"))
+            if (other.gameObject.CompareTag("GunBullet"))
             {
-                TakeDamage(1);
+                if (touchTower)
+                    TakeDamage(10);
+                else
+                    TakeDamage(1);
             }
-            if (collision.gameObject.CompareTag("Bullet"))
+            if (other.gameObject.CompareTag("Bullet"))
             {
-                TakeDamage(3);
+                if (touchTower)
+                    TakeDamage(30);
+                else
+                    TakeDamage(2);
             }
-            if (collision.gameObject.CompareTag("GearBullet"))
+            if (other.gameObject.CompareTag("GearBullet"))
             {
                 TakeDamage(100);
             }
-        }
-
-        private void OnTriggerEnter(Collider other)
-        {
             if (other.gameObject.CompareTag("SmallExplode"))
             {
                 TakeDamage(2);
@@ -95,6 +95,10 @@ namespace EnemyAndPath
             if (other.gameObject.CompareTag("BigExplode"))
             {
                 TakeDamage(4);
+            }
+            if (other.gameObject.CompareTag("Tower"))
+            {
+                touchTower = true;
             }
         }
 
