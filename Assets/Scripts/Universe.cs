@@ -43,6 +43,12 @@ public class Universe : MonoBehaviour
         }
     }
 
+    public void RestartWithoutFixBug()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(MainScene);
+    }
+
     public void Restart()
     {
         if (PersistentSettings.instance.canPlaceOnPath != PersistentSettings.instance.targetCanPlaceOnPath)
