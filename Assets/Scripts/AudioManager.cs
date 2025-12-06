@@ -24,6 +24,34 @@ public class AudioManager : MonoBehaviour
     public float minInterval = 30f;
     public float maxInterval = 60f;
 
+    [System.Serializable]
+    public class CaptionedClip
+    {
+        public AudioClip clip;
+        [TextArea]
+        public string subtitle;
+    }
+
+    public CaptionedClip[] captionedClips;
+
+    private string GetSubtitleForClip(AudioClip clip)
+    {
+        if (clip == null || captionedClips == null)
+        {
+            return null;
+        }
+
+        foreach (var entry in captionedClips)
+        {
+            if (entry != null && entry.clip == clip && !string.IsNullOrEmpty(entry.subtitle))
+            {
+                return entry.subtitle;
+            }
+        }
+
+        return null;
+    }
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -55,8 +83,18 @@ public class AudioManager : MonoBehaviour
 
             if (randomSounds.Length > 0)
             {
-                audioSource.clip = randomSounds[Random.Range(0, randomSounds.Length)];
+                AudioClip clip = randomSounds[Random.Range(0, randomSounds.Length)];
+                audioSource.clip = clip;
                 audioSource.Play();
+
+                if (SubtitleManager.instance != null)
+                {
+                    string subtitle = GetSubtitleForClip(clip);
+                    if (!string.IsNullOrEmpty(subtitle))
+                    {
+                        SubtitleManager.instance.ShowSubtitle(subtitle, clip.length);
+                    }
+                }
                 // Debug.Log("Clip played!");
             }
         }
@@ -88,6 +126,17 @@ public class AudioManager : MonoBehaviour
         // Debug.Log("Entered coroutine");
         yield return new WaitUntil(() => !audioSource.isPlaying);
         audioSource.clip = clip;
+        audioSource.clip = clip;
         audioSource.Play();
+
+        if (SubtitleManager.instance != null)
+        {
+            string subtitle = GetSubtitleForClip(clip);
+            if (!string.IsNullOrEmpty(subtitle))
+            {
+                SubtitleManager.instance.ShowSubtitle(subtitle, clip.length);
+            }
+        }
     }
+
 }
