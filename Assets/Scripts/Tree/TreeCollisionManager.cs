@@ -11,9 +11,9 @@ public class TreeCollisionManager : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Collision detected");
+        Debug.Log("Tree Collision detected");
 
         if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("GunBullet"))
         {

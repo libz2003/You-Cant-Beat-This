@@ -109,7 +109,7 @@ public class Turret : MonoBehaviour
         fireCountdown -= Time.deltaTime;
     }
 
-    void OnTriggerEnter(Collider  other)
+    void OnTriggerEnter(Collider other)
     {
         if (!PersistentSettings.instance.targetCanPlaceOnPath)
         {

@@ -10,7 +10,7 @@ public class OptionColliderController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Enemy") && PersistentSettings.instance.targetOptionObstacle)
         {
