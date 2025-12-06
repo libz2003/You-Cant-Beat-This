@@ -2311,7 +2311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 61.4}
   m_SizeDelta: {x: 800, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!225 &1121960257
@@ -5422,7 +5422,11 @@ MonoBehaviour:
   sellTower: {fileID: 8300000, guid: 777b15b77860941bca98ebd72add09f8, type: 3}
   minInterval: 30
   maxInterval: 60
-  captionedClips: []
+  captionedClips:
+  - clip: {fileID: 8300000, guid: 884404f0ccef7404d8436ee6c5f33c78, type: 3}
+    subtitle: Every game I've ever played has been too easy. They call me the GOAT.
+      But I'm a gamer, not a programmer, so I vibe coded this entire game. And I
+      can say for sure that unless you're me, you can't beat this.
 --- !u!1 &1840325799
 GameObject:
   m_ObjectHideFlags: 0
