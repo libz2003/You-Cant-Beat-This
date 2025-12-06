@@ -70,11 +70,11 @@ namespace EnemyAndPath
                 TakeDamage(4);
                 Destroy(collision.gameObject);
             }
-            else if (collision.gameObject.CompareTag("GearBullet"))
-            {
-                TakeDamage(20);
-                Destroy(collision.gameObject);
-            }
+            // else if (collision.gameObject.CompareTag("GearBullet"))
+            // {
+            //     TakeDamage(20);
+            //     Destroy(collision.gameObject);
+            // }
         }
 
         private void OnTriggerEnter(Collider other)
