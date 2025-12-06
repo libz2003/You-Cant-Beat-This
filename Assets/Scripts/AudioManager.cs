@@ -51,21 +51,21 @@ public class AudioManager : MonoBehaviour
             {
                 audioSource.clip = randomSounds[Random.Range(0, randomSounds.Length)];
                 audioSource.Play();
-                Debug.Log("Clip played!");
+                // Debug.Log("Clip played!");
             }
         }
     }
 
     public void PlaySFX(AudioClip clip)
     {
-        Debug.Log("Attempted to play sound");
+        // Debug.Log("Attempted to play sound");
         if (clip != null)
             StartCoroutine(PlaySFXCoroutine(clip));
     }
 
     private IEnumerator PlaySFXCoroutine(AudioClip clip)
     {
-        Debug.Log("Entered coroutine");
+        // Debug.Log("Entered coroutine");
         yield return new WaitUntil(() => !audioSource.isPlaying);
         audioSource.clip = clip;
         audioSource.Play();
