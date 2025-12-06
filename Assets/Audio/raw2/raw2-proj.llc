@@ -1,0 +1,66 @@
+{
+  version: 2,
+  mediaFileName: 'raw2.m4a',
+  cutSegments: [
+    {
+      start: 1.3464502727273033,
+      end: 33.75520939681485,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 38.71502039681487,
+      end: 42.093961,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 44.631937587259486,
+      end: 49.170756432647586,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 52.08833319044462,
+      end: 54.79569881751826,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 57.848567206370255,
+      end: 60.31704763105504,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 62.330291,
+      end: 64.842433,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 66.863194,
+      end: 70.846479,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 73.411802,
+      end: 77.520527,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 79.844643,
+      end: 82.50482,
+      name: '',
+      selected: true,
+    },
+    {
+      start: 84.222228,
+      end: 85.625643,
+      name: '',
+      selected: true,
+    },
+  ],
+}
