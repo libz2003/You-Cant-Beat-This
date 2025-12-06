@@ -116,7 +116,7 @@ public class Turret : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy") && PersistentSettings.instance.targetCanPlaceOnPath)
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.towerReaction);
             PersistentSettings.instance.targetCanPlaceOnPath = false;

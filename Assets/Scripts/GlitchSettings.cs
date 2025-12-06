@@ -26,6 +26,7 @@ public class GlitchSettings : MonoBehaviour
     {
         SoundEffectManager.PlayButton();
         Time.timeScale = 1f;
+        AudioManager.Instance.PlayHint();
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }

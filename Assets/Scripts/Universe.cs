@@ -45,6 +45,7 @@ public class Universe : MonoBehaviour
 
     public void RestartWithoutFixBug()
     {
+        AudioManager.Instance.PlayHint();
         Time.timeScale = 1f;
         SceneManager.LoadScene(MainScene);
     }
@@ -76,6 +77,8 @@ public class Universe : MonoBehaviour
             // TODO: audio
             PersistentSettings.instance.treeCuttable = PersistentSettings.instance.targetTreeCuttable;
         }
+        
+        AudioManager.Instance.PlayHint();
         Time.timeScale = 1f;
         SceneManager.LoadScene(MainScene);
     }
