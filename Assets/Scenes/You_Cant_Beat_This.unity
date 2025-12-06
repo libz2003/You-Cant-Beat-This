@@ -5437,7 +5437,7 @@ MonoBehaviour:
     subtitle: "I swear I didn't ask for this. Fix\u2026whatever they just did."
   - clip: {fileID: 8300000, guid: 78b1648ba26884ee1b4f013e5f186995, type: 3}
     subtitle: "ChatGPT, have you ever even played a tower defense game? Fix it\u2026 "
-  - clip: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
+  - clip: {fileID: 8300000, guid: 313839a54f2224f8a880dbc1953439f7, type: 3}
     subtitle: "Uhhhh\u2026ChatGPT delete all these trees. I never wanted these in
       the first place! "
 --- !u!1 &1840325799
