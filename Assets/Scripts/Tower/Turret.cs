@@ -111,7 +111,7 @@ public class Turret : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!PersistentSettings.instance.targetCanPlaceOnPath)
+        if (!PersistentSettings.instance.canPlaceOnPath)
         {
             return;
         }
