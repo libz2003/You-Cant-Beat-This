@@ -7,10 +7,15 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public AudioSource audioSource;
     public AudioClip[] randomSounds; // Done
+    public AudioClip bankHint;
     public AudioClip bankReaction; // Done
+    public AudioClip towerHint;
     public AudioClip towerReaction; // Done
+    public AudioClip treeHint;
     public AudioClip treeReaction; // Done
+    public AudioClip settingsHint;
     public AudioClip settingsReaction; // Done
+    public AudioClip pauseHint;
     public AudioClip pauseReaction; // Done
     public AudioClip introduction;
     public AudioClip ending;
@@ -61,6 +66,20 @@ public class AudioManager : MonoBehaviour
         // Debug.Log("Attempted to play sound");
         if (clip != null)
             StartCoroutine(PlaySFXCoroutine(clip));
+    }
+
+    public void PlayHint()
+    {
+        if (PersistentSettings.instance.canPlaceOnPath)
+            PlaySFX(towerHint);
+        else if (PersistentSettings.instance.treeCuttable)
+            PlaySFX(treeHint);
+        else if (PersistentSettings.instance.sellOption)
+            PlaySFX(settingsHint);
+        else if (PersistentSettings.instance.optionObstacle)
+            PlaySFX(pauseHint);
+        else if (PersistentSettings.instance.bankBreakable)
+            PlaySFX(bankHint);
     }
 
     private IEnumerator PlaySFXCoroutine(AudioClip clip)
