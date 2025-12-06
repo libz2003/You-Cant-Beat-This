@@ -109,9 +109,14 @@ public class Turret : MonoBehaviour
         fireCountdown -= Time.deltaTime;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider  other)
     {
-        if (collision.gameObject.CompareTag("Enemy") && PersistentSettings.instance.targetCanPlaceOnPath)
+        if (!PersistentSettings.instance.targetCanPlaceOnPath)
+        {
+            return;
+        }
+
+        if (other.CompareTag("Enemy"))
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.towerReaction);
             PersistentSettings.instance.targetCanPlaceOnPath = false;
