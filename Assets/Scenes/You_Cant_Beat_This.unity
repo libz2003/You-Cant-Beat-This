@@ -5153,14 +5153,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c8074065c4d0e4918b2f02f54ac29034, type: 3}
   - {fileID: 8300000, guid: 01da170dce0f747988dc9255d1e2ede7, type: 3}
   - {fileID: 8300000, guid: 8a29cf63d63f342fda0867c4341ff52e, type: 3}
-  - {fileID: 8300000, guid: 70bbb022f2bd44c3dbea5a49fbb65682, type: 3}
-  - {fileID: 8300000, guid: feb47912349414c81a00a7ccf448577f, type: 3}
-  - {fileID: 8300000, guid: 641abc719976d414489112503e4e8cfb, type: 3}
-  - {fileID: 8300000, guid: 92455864dfd084a95b834ddbb4396e70, type: 3}
+  bankHint: {fileID: 8300000, guid: 8a29cf63d63f342fda0867c4341ff52e, type: 3}
   bankReaction: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
+  towerHint: {fileID: 8300000, guid: 92455864dfd084a95b834ddbb4396e70, type: 3}
   towerReaction: {fileID: 8300000, guid: 78b1648ba26884ee1b4f013e5f186995, type: 3}
+  treeHint: {fileID: 8300000, guid: 641abc719976d414489112503e4e8cfb, type: 3}
   treeReaction: {fileID: 8300000, guid: 313839a54f2224f8a880dbc1953439f7, type: 3}
+  settingsHint: {fileID: 8300000, guid: feb47912349414c81a00a7ccf448577f, type: 3}
   settingsReaction: {fileID: 8300000, guid: 54513b67e21db4dbeb56dd984de3f091, type: 3}
+  pauseHint: {fileID: 8300000, guid: 70bbb022f2bd44c3dbea5a49fbb65682, type: 3}
   pauseReaction: {fileID: 8300000, guid: 6ad370c609eee4669b014858f29bcd30, type: 3}
   introduction: {fileID: 8300000, guid: 884404f0ccef7404d8436ee6c5f33c78, type: 3}
   ending: {fileID: 8300000, guid: bd7a0ba6081564a42b74855db0b0f760, type: 3}
