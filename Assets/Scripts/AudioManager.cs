@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip pauseReaction; // Done
     public AudioClip introduction;
     public AudioClip ending;
+    public AudioClip sellTower;
 
     public float minInterval = 30f;
     public float maxInterval = 60f;

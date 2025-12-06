@@ -19,6 +19,8 @@ public class BuildManager : MonoBehaviour
     // public bool canPlaceOnPath;  // use PersistentSettings.canPlaceOnPath
     public float pathWidth;  // unity
 
+    private bool sellTowerAudioPlayed = false;
+
     void Awake()
     {
         instance = this;
@@ -86,6 +88,14 @@ public class BuildManager : MonoBehaviour
             {
                 SoundEffectManager.PlayTowerBuild();
                 // PlayerStats.Money -= turretCost;
+                if(!sellTowerAudioPlayed)
+                {
+                    sellTowerAudioPlayed = true;
+                    if (AudioManager.Instance != null && AudioManager.Instance.sellTower!= null)
+                    {
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.sellTower);
+                    }
+                }
             }
         }
         else
@@ -180,6 +190,7 @@ public class BuildManager : MonoBehaviour
             {
                 sellComp.buildCost = turretCost;
             }
+            
 
             PlayerStats.Money -= turretCost;
             UnsetTurretToBuild();
