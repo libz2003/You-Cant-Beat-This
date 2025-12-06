@@ -14,6 +14,8 @@ public class PersistentSettings : MonoBehaviour
     public bool treeCuttable = true;
     public bool targetTreeCuttable = true; // Tree/TreeCollisionManager AND Tree/TreeTipCollisionManager
 
+    public bool playHint = false;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
