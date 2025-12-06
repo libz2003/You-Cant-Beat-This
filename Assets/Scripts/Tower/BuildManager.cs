@@ -82,7 +82,7 @@ public class BuildManager : MonoBehaviour
             return;
 
         // check if we have enough money
-        if (PlayerStats.Money >= turretCost) // TODO: change later
+        if (PlayerStats.Money >= turretCost)
         {
             if (PlaceTurretOnGround())
             {
