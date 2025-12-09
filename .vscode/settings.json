@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "You Cant Beat It.slnx"
+    "dotnet.defaultSolution": "You-Cant-Beat-This.slnx"
 }
