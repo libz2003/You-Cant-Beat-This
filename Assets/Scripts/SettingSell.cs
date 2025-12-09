@@ -12,6 +12,8 @@ public class SettingSell : MonoBehaviour, IPointerClickHandler
                 {   
                     SellOption();
                     PersistentSettings.instance.targetSellOption = false;
+                    PersistentSettings.instance.playHint = false;
+                    PersistentSettings.instance.foundBug = true;
                     AudioManager.Instance.PlaySFX(AudioManager.Instance.settingsReaction, true);
                 }
                 break;
@@ -20,6 +22,7 @@ public class SettingSell : MonoBehaviour, IPointerClickHandler
 
     void SellOption()
     {
+        SoundEffectManager.PlayTowerSell();
         PlayerStats.Money += 200000;
         Destroy(gameObject);
     }

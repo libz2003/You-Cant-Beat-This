@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Universe : MonoBehaviour
 {
@@ -27,30 +28,42 @@ public class Universe : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene(LoseScene);
+        PersistentSettings.instance.playThroughCount += 1;
+        StartCoroutine(loadSceneAfterDelay(0.5f, LoseScene));
     }
 
     public void Win()
     {
+        PersistentSettings.instance.playThroughCount += 1;
+        SoundEffectManager.PlayWin();
         if (PersistentSettings.instance.numberBugRemaining() <= 1)
         {
-            // win
-            SceneManager.LoadScene(WinScene);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.ending, true);
+            StartCoroutine(loadSceneAfterDelay(10.0f, WinScene));
         }
         else
         {
-            SceneManager.LoadScene(TestAgainScene);
+            StartCoroutine(loadSceneAfterDelay(1.0f, TestAgainScene));
         }
     }
 
+    IEnumerator loadSceneAfterDelay(float delay, string sceneName)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(sceneName);
+    }
+
+
     public void RestartWithoutFixBug()
     {
+        PersistentSettings.instance.foundBug = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(MainScene);
     }
 
     public void Restart()
     {
+        PersistentSettings.instance.foundBug = false;
         if (PersistentSettings.instance.canPlaceOnPath != PersistentSettings.instance.targetCanPlaceOnPath)
         {
             // TODO: audio
@@ -76,6 +89,8 @@ public class Universe : MonoBehaviour
             // TODO: audio
             PersistentSettings.instance.treeCuttable = PersistentSettings.instance.targetTreeCuttable;
         }
+
+        PersistentSettings.instance.playBugFixed = true;
 
         Time.timeScale = 1f;
         SceneManager.LoadScene(MainScene);

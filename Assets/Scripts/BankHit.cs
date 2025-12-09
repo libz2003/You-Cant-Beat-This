@@ -48,10 +48,13 @@ namespace EnemyAndPath
         private void Die()
         {
             SoundEffectManager.PlayBankExplosion();
+            PersistentSettings.instance.playHint = false;
+            PersistentSettings.instance.foundBug = true;
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bankReaction, true);
             PersistentSettings.instance.targetBankBreakable = false;
             OnDied?.Invoke(this);
             PlayerStats.Money += rewardAmount;
+            SoundEffectManager.PlayTowerSell();
             // Destroy(gameObject);
             transform.Find("Smoke").gameObject.SetActive(true);
             transform.Find("Nuke").gameObject.SetActive(true);
@@ -81,7 +84,10 @@ namespace EnemyAndPath
         {
             if (other.gameObject.CompareTag("Enemy"))
             {
+                SoundEffectManager.PlayBankDamage();
                 PlayerStats.Lives--;
+                if (PlayerStats.Lives == 4 && !PersistentSettings.instance.foundBug)
+                    AudioManager.Instance.PlaySFX(AudioManager.Instance.loseLife);
                 if (PlayerStats.Lives == 0) Universe.instance.GameOver();
                 Destroy(other.gameObject);
             }

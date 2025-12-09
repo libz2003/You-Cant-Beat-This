@@ -19,10 +19,35 @@ namespace EnemyAndPath
         private bool waveCompleted;
 
         private int nextEnemyIndex = 0;
+        private int deathCount = 0;
+        private bool deathSoundPlayed = false;
 
         private void Start()
         {
-            _spawnTimer = spawnInterval;
+            if (PersistentSettings.instance.playThroughCount == 0)
+            {
+                _spawnTimer = 17.5f;
+            }else 
+            {
+                _spawnTimer = 0.0f;
+            }
+            Enemy.OnEnemyDied += HandleEnemyDied;
+        }
+
+        private void OnDestroy()
+        {
+            Enemy.OnEnemyDied -= HandleEnemyDied;
+        }
+
+        private void HandleEnemyDied(Enemy _)
+        {
+            deathCount++;
+            if(deathCount <= 4 && !PersistentSettings.instance.foundBug && !deathSoundPlayed) {
+                if (AudioManager.Instance.tryPlayClip(AudioManager.Instance.killEnemy))
+                {
+                    deathSoundPlayed = true;
+                }
+            }
         }
 
         private void Update()

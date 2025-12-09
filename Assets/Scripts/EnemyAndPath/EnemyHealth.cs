@@ -96,7 +96,7 @@ namespace EnemyAndPath
             {
                 TakeDamage(4);
             }
-            if (other.gameObject.CompareTag("Tower"))
+            if (other.gameObject.CompareTag("Tower") && !PersistentSettings.instance.targetCanPlaceOnPath && PersistentSettings.instance.canPlaceOnPath)
             {
                 touchTower = true;
             }

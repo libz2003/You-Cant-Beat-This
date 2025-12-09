@@ -8,7 +8,7 @@ public class PathWalker : MonoBehaviour
     public float moveSpeed = 25.0f;
     public bool hitting = false;
     public float turnSpeed = 5.0f;
-    public float maxDistanceFromPath = 1.0f;
+    public float maxDistanceFromPath = 5.0f;
     [Header("Animation")]
     public Animator animator;
     private int currentPointIndex = 0;
@@ -44,7 +44,6 @@ public class PathWalker : MonoBehaviour
     {
         this.waypoints = waypoints;
         currentPointIndex = 0;
-        // transform.position = waypoints[0].position;  // I don't know why this doesn't work
         transform.position = waypoints[0].position;
     }
 
@@ -73,7 +72,11 @@ public class PathWalker : MonoBehaviour
                 Vector3 vecPath = waypoints[currentPointIndex].position - waypoints[currentPointIndex-1].position;
                 Vector3 vecPathVert = Vector3.Dot(vecPath.normalized, transform.position - waypoints[currentPointIndex-1].position) * vecPath.normalized;
                 Vector3 offset = (waypoints[currentPointIndex-1].position + vecPathVert) - transform.position;
-                characterController.Move(offset);
+                Vector3 offsetY = new Vector3(0, offset.y, 0);
+                Vector3 offsetXZ = new Vector3(offset.x, 0, offset.z);
+                characterController.Move(offsetY);
+                if (offsetXZ.magnitude > maxDistanceFromPath)
+                    characterController.Move(offsetXZ);
             }
         }
         else

@@ -13,7 +13,6 @@ public class TreeCollisionManager : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Tree Collision detected");
 
         if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("GunBullet"))
         {

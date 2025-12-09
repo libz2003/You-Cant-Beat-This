@@ -20,6 +20,8 @@ public class SoundEffectManager: MonoBehaviour
     public AudioClip skeleDeath;
     public AudioClip skeleAggro;
     public AudioClip sellTower;
+    public AudioClip bankDamage;
+    public AudioClip winSound;
     private float targetVolume = 1.0f;
     private float volume = 1.0f;
 
@@ -60,6 +62,14 @@ public class SoundEffectManager: MonoBehaviour
         }
     }
 
+    public static void PlayWin()
+    {
+        instance.audioSource.PlayOneShot(instance.winSound, 1.0f * instance.volume);
+    }
+    public static void PlayBankDamage()
+    {
+        instance.audioSource.PlayOneShot(instance.bankDamage, 0.7f * instance.volume);
+    }
     public static void PlayTowerSell()
     {
         instance.audioSource.PlayOneShot(instance.sellTower, 1.0f * instance.volume);

@@ -13,8 +13,10 @@ public class PersistentSettings : MonoBehaviour
     public bool targetBankBreakable = true; // BankHit
     public bool treeCuttable = true;
     public bool targetTreeCuttable = true; // Tree/TreeCollisionManager AND Tree/TreeTipCollisionManager
-
     public bool playHint = false;
+    public bool playBugFixed = false;
+    public bool foundBug = false;
+    public int playThroughCount = 0;
 
     void Awake()
     {

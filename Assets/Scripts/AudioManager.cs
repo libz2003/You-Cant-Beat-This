@@ -17,12 +17,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip settingsReaction; // Done
     public AudioClip pauseHint;
     public AudioClip pauseReaction; // Done
-    public AudioClip introduction;
+    public AudioClip introduction1;
+    public AudioClip introduction2;
     public AudioClip ending;
     public AudioClip sellTower;
+    public AudioClip killEnemy;
+    public AudioClip loseLife;
+    public AudioClip bugFixed;
 
-    public float minInterval = 30f;
-    public float maxInterval = 60f;
+    public float minInterval = 15f;
+    public float maxInterval = 40f;
 
     [System.Serializable]
     public class CaptionedClip
@@ -33,6 +37,9 @@ public class AudioManager : MonoBehaviour
     }
 
     public CaptionedClip[] captionedClips;
+    private AudioClip[] playQueue = new AudioClip[4];
+    private int rightIndex = 0;
+    private int leftIndex = 0;
 
     private string GetSubtitleForClip(AudioClip clip)
     {
@@ -52,6 +59,12 @@ public class AudioManager : MonoBehaviour
         return null;
     }
 
+
+    public static bool IsMainAudioPlaying()
+    {
+        return Instance != null && Instance.audioSource != null && Instance.audioSource.isPlaying;
+    }
+
     void Awake()
     {
         if (Instance == null)
@@ -62,11 +75,27 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
+        restart();
+    }
+
+    public void restart()
+    {
+        StopAllCoroutines();
+        playQueue = new AudioClip[4];
+        rightIndex = 0;
+        leftIndex = 0;
+
+        if(PersistentSettings.instance.playBugFixed)
+        {
+            PlaySFX(bugFixed);
+            PersistentSettings.instance.playBugFixed = false;
+        }
+
         StartCoroutine(RandomLoop());
 
         if (PersistentSettings.instance.playHint)
         {
-            PlayHint();
+            StartCoroutine(PlayHintAfterWait(20.0f));
         }
         else
         {
@@ -74,9 +103,21 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public static bool IsMainAudioPlaying()
+    IEnumerator PlayHintAfterWait(float delay)
     {
-        return Instance != null && Instance.audioSource != null && Instance.audioSource.isPlaying;
+        yield return new WaitForSeconds(delay);
+        if (PersistentSettings.instance.playHint)
+            PlayHint();
+    }
+
+    public bool tryPlayClip(AudioClip clip)
+    {
+        if (!audioSource.isPlaying)
+        {
+            PlayOneClip(clip);
+            return true;
+        }
+        return false;
     }
 
     IEnumerator RandomLoop()
@@ -89,37 +130,50 @@ public class AudioManager : MonoBehaviour
             // Wait until nothing is playing
             yield return new WaitUntil(() => !audioSource.isPlaying);
 
+            if (PlayerStats.Lives <= 2)
+                break;
+
             if (randomSounds.Length > 0)
             {
                 AudioClip clip = randomSounds[Random.Range(0, randomSounds.Length)];
-                audioSource.clip = clip;
-                audioSource.Play();
-
-                if (SubtitleManager.instance != null)
-                {
-                    string subtitle = GetSubtitleForClip(clip);
-                    if (!string.IsNullOrEmpty(subtitle))
-                    {
-                        SubtitleManager.instance.ShowSubtitle(subtitle, clip.length);
-                    }
-                }
-                // Debug.Log("Clip played!");
+                PlayOneClip(clip);
             }
         }
     }
 
     public void PlaySFX(AudioClip clip, bool interrupt = false)
     {
-        // Debug.Log("Attempted to play sound");
-        if (clip != null)
-            StartCoroutine(PlaySFXCoroutine(clip, interrupt));
+        if(interrupt)
+        {
+            PlayOneClip(clip); // no race determinacy because unity executes 1 update at a time
+            playQueue = new AudioClip[4];
+            rightIndex = 0;
+            leftIndex = 0;
+        }else
+        {
+            playQueue[rightIndex] = clip;
+            rightIndex = (rightIndex + 1) % playQueue.Length;
+            if(rightIndex == leftIndex) // queue full, drop oldest
+                leftIndex = (leftIndex + 1) % playQueue.Length;
+        }
+    }
+
+
+    void Update()
+    {
+        if (!audioSource.isPlaying && leftIndex != rightIndex)
+        {
+            AudioClip clip = playQueue[leftIndex];
+            leftIndex = (leftIndex + 1) % playQueue.Length;
+            PlayOneClip(clip);
+        }
     }
 
     public void PlayHint()
     {
-        // if (PersistentSettings.instance.canPlaceOnPath)
-        //     PlaySFX(towerHint);
-        if (PersistentSettings.instance.treeCuttable)
+        if (PersistentSettings.instance.canPlaceOnPath)
+            PlaySFX(towerHint);
+        else if (PersistentSettings.instance.treeCuttable)
             PlaySFX(treeHint);
         else if (PersistentSettings.instance.sellOption)
             PlaySFX(settingsHint);
@@ -129,13 +183,9 @@ public class AudioManager : MonoBehaviour
             PlaySFX(bankHint);
     }
 
-    private IEnumerator PlaySFXCoroutine(AudioClip clip, bool interrupt = false)
+    private void PlayOneClip(AudioClip clip)
     {
-        // Debug.Log("Entered coroutine");
-        if (interrupt)
-            audioSource.Stop();
-        else
-            yield return new WaitUntil(() => !audioSource.isPlaying);
+        audioSource.Stop();
         audioSource.clip = clip;
         audioSource.Play();
 
@@ -148,5 +198,4 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-
 }

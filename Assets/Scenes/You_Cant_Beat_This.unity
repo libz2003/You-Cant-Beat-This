@@ -1401,6 +1401,142 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 3}
   m_PrefabInstance: {fileID: 693182335}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &696891344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 696891345}
+  - component: {fileID: 696891347}
+  - component: {fileID: 696891346}
+  m_Layer: 5
+  m_Name: Text (TMP) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!224 &696891345
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696891344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1597612710}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &696891346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696891344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Restart
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 50
+  m_fontSizeBase: 50
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &696891347
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696891344}
+  m_CullTransparentMesh: 1
 --- !u!1 &787306461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93ea2a7e846334437bb12c9365bb24b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc9be0bb7bd4843c5855e0ec7a639ff2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1655,7 +1791,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 83}
+  m_AnchoredPosition: {x: 19, y: 83}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817732803
@@ -1743,7 +1879,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -15.313431, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2742,7 +2878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 61.4}
+  m_AnchoredPosition: {x: -35, y: 61.4}
   m_SizeDelta: {x: 630, y: 40}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!225 &1121960257
@@ -3272,7 +3408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0.84313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3845,7 +3981,7 @@ Transform:
   m_GameObject: {fileID: 1322745781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 522.8048, y: 0.00003, z: 466.82742}
+  m_LocalPosition: {x: 79, y: 0.00003, z: 461.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4696,15 +4832,16 @@ RectTransform:
   m_GameObject: {fileID: 1597612709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 3.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 696891345}
   m_Father: {fileID: 1255818609}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1597612711
 MonoBehaviour:
@@ -4727,11 +4864,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
+    m_HighlightedColor: {r: 1, g: 0.9669811, b: 0.9669811, a: 0.74509805}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4775,15 +4912,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.32941177, g: 0.32941177, b: 0.32941177, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ec602a1f4dea640cab14c557954c9d90, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5833,53 +5970,65 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a8083a2530773400298eb0d4e5b8c318, type: 3}
   - {fileID: 8300000, guid: c8074065c4d0e4918b2f02f54ac29034, type: 3}
   - {fileID: 8300000, guid: 01da170dce0f747988dc9255d1e2ede7, type: 3}
-  bankHint: {fileID: 8300000, guid: 8a29cf63d63f342fda0867c4341ff52e, type: 3}
+  bankHint: {fileID: 8300000, guid: 64775da75553e4367b53fcb6c1f2cf87, type: 3}
   bankReaction: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
-  towerHint: {fileID: 8300000, guid: 92455864dfd084a95b834ddbb4396e70, type: 3}
+  towerHint: {fileID: 8300000, guid: 55b67bb8791ce4c0fa55d87a16c97b56, type: 3}
   towerReaction: {fileID: 8300000, guid: 78b1648ba26884ee1b4f013e5f186995, type: 3}
-  treeHint: {fileID: 8300000, guid: 641abc719976d414489112503e4e8cfb, type: 3}
+  treeHint: {fileID: 8300000, guid: 4ca190c61ac704b8abdfc93b41860679, type: 3}
   treeReaction: {fileID: 8300000, guid: 313839a54f2224f8a880dbc1953439f7, type: 3}
   settingsHint: {fileID: 8300000, guid: feb47912349414c81a00a7ccf448577f, type: 3}
-  settingsReaction: {fileID: 8300000, guid: 54513b67e21db4dbeb56dd984de3f091, type: 3}
+  settingsReaction: {fileID: 8300000, guid: 07e1769f3d61949c092f2dd7168773e7, type: 3}
   pauseHint: {fileID: 8300000, guid: 70bbb022f2bd44c3dbea5a49fbb65682, type: 3}
-  pauseReaction: {fileID: 8300000, guid: 6ad370c609eee4669b014858f29bcd30, type: 3}
-  introduction: {fileID: 8300000, guid: 884404f0ccef7404d8436ee6c5f33c78, type: 3}
+  pauseReaction: {fileID: 8300000, guid: 303ecbd82f6cb48459f2c037d52c77b9, type: 3}
+  introduction1: {fileID: 8300000, guid: 5ebff99d9f64f4e2787caf78a12a0118, type: 3}
+  introduction2: {fileID: 8300000, guid: 8862d996f4df449e1a4563ecb382c86b, type: 3}
   ending: {fileID: 8300000, guid: bd7a0ba6081564a42b74855db0b0f760, type: 3}
-  sellTower: {fileID: 8300000, guid: 777b15b77860941bca98ebd72add09f8, type: 3}
+  sellTower: {fileID: 8300000, guid: 87e4b668bc52a43348041ffae9a46aee, type: 3}
+  killEnemy: {fileID: 8300000, guid: e4540c35903ce44719b9420fd8b32114, type: 3}
+  loseLife: {fileID: 8300000, guid: 32c3c0b1ec01a4314a7ed250cb498454, type: 3}
+  bugFixed: {fileID: 8300000, guid: 16e02f3389e3a4161b91548cbae08774, type: 3}
   minInterval: 30
   maxInterval: 60
   captionedClips:
-  - clip: {fileID: 8300000, guid: 884404f0ccef7404d8436ee6c5f33c78, type: 3}
-    subtitle: Every game I've ever played has been too easy. They call me the GOAT.
-      But I'm a gamer, not a programmer, so I vibe coded this entire game. And I
-      can say for sure that unless you're me, you can't beat this.
-  - clip: {fileID: 8300000, guid: 8a29cf63d63f342fda0867c4341ff52e, type: 3}
-    subtitle: Every other tower defense game ever has given you money for killing
-      enemies. Until now. That's innovation.
+  - clip: {fileID: 8300000, guid: 5ebff99d9f64f4e2787caf78a12a0118, type: 3}
+    subtitle: "Every game I've ever played has been too easy. They call me the GOAT.
+      So I made this impossible tower defense game. I can guarantee you can't beat
+      this. I am a gamer not a programmer though, so I vibe coded the entire thing.
+      ChatGPT let\u2019s get started! "
+  - clip: {fileID: 8300000, guid: 64775da75553e4367b53fcb6c1f2cf87, type: 3}
+    subtitle: "The bank\u2019s got a lot of money in it! You should really protect
+      it!"
   - clip: {fileID: 8300000, guid: 70bbb022f2bd44c3dbea5a49fbb65682, type: 3}
     subtitle: "You're already screwed on this run. Just give up and retry at this
       point\u2026"
-  - clip: {fileID: 8300000, guid: 641abc719976d414489112503e4e8cfb, type: 3}
-    subtitle: I don't know why ChatGPT added trees. I didn't even ask for them.
+  - clip: {fileID: 8300000, guid: 4ca190c61ac704b8abdfc93b41860679, type: 3}
+    subtitle: "I don\u2019t know why ChatGPT added trees, they are kinda just getting
+      in the way"
   - clip: {fileID: 8300000, guid: feb47912349414c81a00a7ccf448577f, type: 3}
     subtitle: The gear tower is great. Too bad you're so poor, you're never going
       to see it.
-  - clip: {fileID: 8300000, guid: 92455864dfd084a95b834ddbb4396e70, type: 3}
-    subtitle: Ha, look at how much HP those guys have. They're just going to march
-      right through your towers.
-  - clip: {fileID: 8300000, guid: 777b15b77860941bca98ebd72add09f8, type: 3}
-    subtitle: Right click to sell a tower! Protect the bank!
+  - clip: {fileID: 8300000, guid: 55b67bb8791ce4c0fa55d87a16c97b56, type: 3}
+    subtitle: you can place the tower just about anywhere on the map
+  - clip: {fileID: 8300000, guid: 87e4b668bc52a43348041ffae9a46aee, type: 3}
+    subtitle: You can sell towers by rightclicking them!
   - clip: {fileID: 8300000, guid: 0026a056a24cd4aab841a39c193cb5e9, type: 3}
     subtitle: What? How is that even possible? Whatever, hey ChatGPT. Fix the bank.
-  - clip: {fileID: 8300000, guid: 6ad370c609eee4669b014858f29bcd30, type: 3}
-    subtitle: "ChatGPT, patch that. You should know this by now\u2026 "
-  - clip: {fileID: 8300000, guid: 54513b67e21db4dbeb56dd984de3f091, type: 3}
-    subtitle: "I swear I didn't ask for this. Fix\u2026whatever they just did."
+  - clip: {fileID: 8300000, guid: 303ecbd82f6cb48459f2c037d52c77b9, type: 3}
+    subtitle: "Huh I guess not everything needs a Collider\u2026"
+  - clip: {fileID: 8300000, guid: 07e1769f3d61949c092f2dd7168773e7, type: 3}
+    subtitle: "Ah well\u2026I guess that\u2019s what I get for reusing assets\u2026"
   - clip: {fileID: 8300000, guid: 78b1648ba26884ee1b4f013e5f186995, type: 3}
     subtitle: "ChatGPT, have you ever even played a tower defense game? Fix it\u2026 "
   - clip: {fileID: 8300000, guid: 313839a54f2224f8a880dbc1953439f7, type: 3}
     subtitle: "Uhhhh\u2026ChatGPT delete all these trees. I never wanted these in
       the first place! "
+  - clip: {fileID: 8300000, guid: 8862d996f4df449e1a4563ecb382c86b, type: 3}
+    subtitle: Alright so you got monsters coming for your bank. Do whatever you need
+      to stop them! And you should know, you can restart the game with the settings
+      on the top right. And you can sell towers by right clicking them.
+  - clip: {fileID: 8300000, guid: bd7a0ba6081564a42b74855db0b0f760, type: 3}
+    subtitle: "ChatGPT this game sucks, hurry up and fix everything! Wait\u2026wait
+      what are you doing? Oh shi\u2026"
 --- !u!1 &1840325799
 GameObject:
   m_ObjectHideFlags: 0
@@ -5920,6 +6069,9 @@ MonoBehaviour:
   treeCuttable: 1
   targetTreeCuttable: 1
   playHint: 0
+  playBugFixed: 0
+  foundBug: 0
+  playThroughCount: 0
 --- !u!4 &1840325801
 Transform:
   m_ObjectHideFlags: 0
@@ -6590,6 +6742,8 @@ MonoBehaviour:
   skeleDeath: {fileID: 8300000, guid: 8953d9ac70c154f178af3ac4f7355b11, type: 3}
   skeleAggro: {fileID: 8300000, guid: ff5f38b1314e3472d99460d05a9ac40c, type: 3}
   sellTower: {fileID: 8300000, guid: a1e772eb481ed4b7c96391b2e695a6d6, type: 3}
+  bankDamage: {fileID: 8300000, guid: 28f75855451de4973be484b45a3bae72, type: 3}
+  winSound: {fileID: 8300000, guid: 2afce2d70182e4987897449e46404629, type: 3}
 --- !u!4 &1930475082
 Transform:
   m_ObjectHideFlags: 0
@@ -7181,7 +7335,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 420272, guid: aee731a00031fcc4d9d2b075e528e050, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 883
+      value: 840
       objectReference: {fileID: 0}
     - target: {fileID: 420272, guid: aee731a00031fcc4d9d2b075e528e050, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7189,7 +7343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 420272, guid: aee731a00031fcc4d9d2b075e528e050, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 251
+      value: 219
       objectReference: {fileID: 0}
     - target: {fileID: 420272, guid: aee731a00031fcc4d9d2b075e528e050, type: 3}
       propertyPath: m_LocalRotation.w

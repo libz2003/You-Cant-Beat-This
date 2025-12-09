@@ -64,7 +64,7 @@ public class Turret : MonoBehaviour
             float distanceToEnemy = Vector3.Distance(transform.position, enemyGO.transform.position);
 
             // Only consider enemies within range
-            if (distanceToEnemy > range)
+            if (distanceToEnemy > range || enemy.died)
             {
                 continue;
             }
@@ -130,8 +130,10 @@ public class Turret : MonoBehaviour
             return;
         }
 
+        PersistentSettings.instance.foundBug = true;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.towerReaction, true);
         PersistentSettings.instance.targetCanPlaceOnPath = false;
+        PersistentSettings.instance.playHint = false;
     }
 
     void Shoot()

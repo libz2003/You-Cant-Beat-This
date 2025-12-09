@@ -14,8 +14,10 @@ public class OptionColliderController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && PersistentSettings.instance.optionObstacle && PersistentSettings.instance.targetOptionObstacle)
         {
+            PersistentSettings.instance.foundBug = true;
             AudioManager.Instance.PlaySFX(AudioManager.Instance.pauseReaction, true);
             PersistentSettings.instance.targetOptionObstacle = false;
+            PersistentSettings.instance.playHint = false;
         }
     }
 }

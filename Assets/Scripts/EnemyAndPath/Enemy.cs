@@ -9,7 +9,8 @@ namespace EnemyAndPath
         public PathWalker Walker { get; private set; }
         public EnemyHealth Health;
 
-        public event Action<Enemy> OnEnemyDied;
+        public static event Action<Enemy> OnEnemyDied;
+        public bool died = false;
 
         private Spawner ownerSpawner;
 
@@ -25,6 +26,7 @@ namespace EnemyAndPath
         {
             if (Health != null)
             {
+                died = false;
                 Health.OnDied += HandleDied;
                 gameObject.GetComponent<Animator>().enabled = true;
                 gameObject.GetComponent<PathWalker>().enabled = true;
@@ -53,6 +55,7 @@ namespace EnemyAndPath
         /// </summary>
         public void Initialize(Transform[] waypoints, Spawner spawner, int index)
         {
+            died = false;
             ownerSpawner = spawner;
             Index = index;
             if (Walker != null && waypoints != null && waypoints.Length > 0)
@@ -71,6 +74,7 @@ namespace EnemyAndPath
             OnEnemyDied?.Invoke(this);
 
             // Disable the enemy. OnDisable will notify the spawner that we are finished.
+            died = true;
             SoundEffectManager.PlaySkeleDeath();
             gameObject.GetComponent<Animator>().enabled = false;
             gameObject.GetComponent<PathWalker>().enabled = false;

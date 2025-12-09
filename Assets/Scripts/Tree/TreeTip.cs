@@ -12,6 +12,8 @@ public class TreeTip : MonoBehaviour
             rb.isKinematic = true;
             col.isTrigger = false;
             PersistentSettings.instance.targetTreeCuttable = false;
+            PersistentSettings.instance.playHint = false;
+            PersistentSettings.instance.foundBug = true;
             AudioManager.Instance.PlaySFX(AudioManager.Instance.treeReaction, true);
         }
     }

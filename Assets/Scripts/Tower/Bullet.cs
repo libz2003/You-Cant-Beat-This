@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
         direction = (_target.position - transform.position);
         direction.y = 0;
         direction = direction.normalized;
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, (_target.position - transform.position).magnitude / speed + 50.0f / speed);
     }
 
     void Update()

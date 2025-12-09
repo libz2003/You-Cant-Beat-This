@@ -31,7 +31,8 @@ public class GlitchSettings : MonoBehaviour
         PersistentSettings.instance.targetSellOption = PersistentSettings.instance.sellOption;
         PersistentSettings.instance.targetBankBreakable = PersistentSettings.instance.bankBreakable;
         PersistentSettings.instance.targetTreeCuttable = PersistentSettings.instance.treeCuttable;
-        AudioManager.Instance.PlayHint();
+        PersistentSettings.instance.playThroughCount += 1;
+        PersistentSettings.instance.foundBug = false;
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
